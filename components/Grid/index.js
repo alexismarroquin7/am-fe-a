@@ -11,6 +11,8 @@ const StyledGrid = styled.div`
   align-items: ${({alignItems}) => alignItems ? alignItems : 'flex-start'};
 
   box-shadow: ${({boxShadow}) => boxShadow ? boxShadow : 'none'};
+  
+  padding: ${({padding}) => padding ? padding : '0'};
 `
 
 export const Grid = (props) => {
@@ -24,7 +26,8 @@ export const Grid = (props) => {
     alignItems={props.alignItems}
 
     boxShadow={props.boxShadow}
-
+    
+    padding={props.padding}
   >{props.children}</StyledGrid>
   )
 }
