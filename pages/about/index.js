@@ -1,7 +1,9 @@
+import { Section } from "../../components";
+
 export default function About () {
   return (
-  <div>
-    about  
-  </div>
+  <Section>
+    
+  </Section>
   )
 }
