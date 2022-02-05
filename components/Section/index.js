@@ -9,16 +9,20 @@ const StyledSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: ${({padding}) => padding ? padding : '0 1rem'};
+  background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
+  color: ${({color, theme}) => color ? color : theme.color.black};
   
 `
 
 export const Section = (props) => {
   return (
   <StyledSection
-    width={props.width ? props.width : null}
-    height={props.height ? props.height : null}
-    border={props.border ? props.border : null}
-    padding={props.padding ? props.padding : null}
+    width={props.width}
+    height={props.height}
+    border={props.border}
+    padding={props.padding}
+    bgColor={props.bgColor}
+    color={props.color}
   >
     {props.children}
   </StyledSection>
