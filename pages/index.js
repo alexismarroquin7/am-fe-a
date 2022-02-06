@@ -2,7 +2,7 @@
 import { home } from "../data";
 
 // components
-import { Card, Section } from "../components";
+import { Card, Section, Button, Grid } from "../components";
 import Head from 'next/head';
 
 // styles
@@ -36,6 +36,22 @@ export default function Home() {
         <p>{home.description}</p>
       </Card>
     
+      <Grid
+        width="90%"
+        direction="column wrap"
+        alignItems="center"
+        gap={theme.gap.primary}
+      >
+        <Button
+          width="100%"
+          text={"About"}
+        />
+        <Button
+          width="100%"
+          text={"Contact"}
+        />
+      </Grid>
+        
     </Section>
   )
 }

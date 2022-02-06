@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
+const sharedColor = {
+  white: "#fff",
+  black: "#000"
+}
+
 const sharedTheme = {
   borderRadius: {
     primary: "10px"
@@ -16,6 +21,7 @@ const light = {
   ...sharedTheme,
   type: 'light',
   color: {
+    ...sharedColor,
     primary: {
       name: "dark_blue",
       value: "#001730"
@@ -27,9 +33,7 @@ const light = {
     terciary: {
       name: "red",
       value: "#FE4A49"
-    },
-    white: "#fff",
-    black: "#000"
+    }
   }
 };
 
@@ -37,6 +41,7 @@ const dark = {
   ...sharedTheme,
   type: 'dark',
   color: {
+    ...sharedColor,
     primary: {
       name: "",
       value: ""
