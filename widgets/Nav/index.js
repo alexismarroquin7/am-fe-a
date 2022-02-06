@@ -1,8 +1,15 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { AlexisMarroquinLogo, Grid, MenuIcon } from "../../components";
+import { NavAction } from "../../store";
 
 export const Nav = () => {
+
+  const nav = useSelector(s => s.nav);
+  const dispatch = useDispatch();
+
   const theme = useTheme();
+  
   return (
   <Grid
     justify="space-between"
@@ -11,7 +18,15 @@ export const Nav = () => {
     padding="2.5% 5%"
     boxShadow={`0px 0px 5px ${theme.color.black}`}
   >
-    <MenuIcon />
+    <MenuIcon 
+      open={nav.menu.open}
+      onClick={() => {
+        nav.menu.open 
+        ? dispatch(NavAction.menu.close())
+        : dispatch(NavAction.menu.open())
+        
+      }}
+    />
     <AlexisMarroquinLogo/>
   </Grid>
   )
