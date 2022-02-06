@@ -1,12 +1,19 @@
-import { Section } from "../components";
+// data
+import { home } from "../data";
+
+// components
+import { Card, Section } from "../components";
 import Head from 'next/head';
+
+// styles
 import { useTheme } from "styled-components";
 
 export default function Home() {
   const theme = useTheme();
   return (
     <Section
-      bgColor={theme.color.primary}
+      bgColor={theme.color.secondary.value}
+      border={"1px solid red"}
     >
       <Head>
         <title>Create Next App</title>
@@ -14,7 +21,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <h1>Hello world</h1>
+      {home.title.words.map(word => {
+        return (
+        <h2
+          key={word.word_id}
+        >
+          {word.text}
+        </h2>
+        )
+      })}
+
+      <Card>
+        {home.description}
+      </Card>
     
     </Section>
   )

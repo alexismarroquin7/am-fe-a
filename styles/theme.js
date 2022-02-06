@@ -1,6 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
+const sharedTheme = {
+  borderRadius: {
+    primary: "10px"
+  },
+  padding: {
+    primary: "1rem"
+  },
+  gap: {
+    primary: "1rem"
+  },
+} 
+
 const light = {
+  ...sharedTheme,
   type: 'light',
   color: {
     primary: {
@@ -18,10 +31,10 @@ const light = {
     white: "#fff",
     black: "#000"
   }
-
 };
 
 const dark = {
+  ...sharedTheme,
   type: 'dark',
   color: {
     primary: {
