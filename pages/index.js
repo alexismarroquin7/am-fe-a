@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <Section
       bgColor={theme.color.secondary.value}
-      border={"1px solid red"}
     >
       <Head>
         <title>Create Next App</title>
@@ -31,8 +30,10 @@ export default function Home() {
         )
       })}
 
-      <Card>
-        {home.description}
+      <Card
+        width="90%"
+      >
+        <p>{home.description}</p>
       </Card>
     
     </Section>

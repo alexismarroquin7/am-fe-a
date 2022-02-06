@@ -11,7 +11,13 @@ const StyledCard = styled.div`
 
 export const Card = (props) => {
   return (
-    <StyledCard>
+    <StyledCard
+      width={props.width}
+      borderRadius={props.borderRadius}
+      color={props.color}
+      bgColor={props.bgColor}
+      padding={props.padding}
+    >
       {props.children}
     </StyledCard>
   )
