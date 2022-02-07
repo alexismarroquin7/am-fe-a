@@ -4,6 +4,7 @@ import { home } from "../data";
 // components
 import { Card, Section, Button, Grid } from "../components";
 import Head from 'next/head';
+import Image from 'next/image';
 
 // styles
 import { useTheme } from "styled-components";
@@ -33,6 +34,11 @@ export default function Home() {
       <Card
         width="90%"
       >
+        <Image
+          src={home.headshot.src}
+          width={home.headshot.width}
+          height={home.headshot.height}
+        />
         <p>{home.description}</p>
       </Card>
     
