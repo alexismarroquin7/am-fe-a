@@ -1,4 +1,3 @@
-import { Grid } from "../../Grid"
 import styled from "styled-components";
 
 const StyledAlexisMarroquinLogo = styled.div`
@@ -7,7 +6,8 @@ const StyledAlexisMarroquinLogo = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ;
-  h2 {
+
+  h5 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -32,12 +32,12 @@ const StyledAlexisMarroquinLogo = styled.div`
 export const AlexisMarroquinLogo = () => {
   return (
   <StyledAlexisMarroquinLogo>
-    <h2>
+    <h5>
       {'<'}
       <span>{'AM'}</span>
       <span>{'/'}</span>
       {'>'}
-    </h2>
+    </h5>
   </StyledAlexisMarroquinLogo>
   )
 }
