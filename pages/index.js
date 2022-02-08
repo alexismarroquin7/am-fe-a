@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <Section
       bgColor={theme.color.secondary.value}
+      padding="2rem 2rem 4rem 2rem"
     >
       <Head>
         <title>Alexis Marroquin</title>
@@ -26,12 +27,12 @@ export default function Home() {
         width="90%"
         direction="column wrap"
         alignItems="center"
+        gap={theme.gap.primary}
       >
         
         <Grid
           direction="column wrap"
-          gap="2rem"
-          padding="2rem 0"
+          gap={theme.gap.primary}
         >
           <p>{home.titleIntro}</p>
           <h2
@@ -43,8 +44,8 @@ export default function Home() {
         </Grid>
 
         <Grid
-          border=".5rem solid white"
-          borderRadius="50%"
+          border={home.headshot.border}
+          borderRadius={home.headshot.borderRadius}
         >
           <Image
             src={home.headshot.src}
@@ -53,31 +54,27 @@ export default function Home() {
             className={styles.headshot}
           />    
         </Grid>
+      
+        <Grid
+          direction="column wrap"
+          gap={theme.gap.primary}
+        >
+          <h5>{home.description}</h5>
+        </Grid>
 
-      </Grid>
-
-      <Card
-        width="90%"
-        bgColor="none"
-      >
-        <h5>{home.description}</h5>
-      </Card>
-    
-      <Grid
-        width="90%"
-        direction="column wrap"
-        alignItems="center"
-        gap={theme.gap.primary}
-      >
         <Button
           width="100%"
           text={"About"}
         />
+
         <Button
           width="100%"
           text={"Contact"}
         />
+
       </Grid>
+
+    
         
     </Section>
   )
