@@ -1,20 +1,19 @@
-import { createIds } from "../utils";
+import { headshot } from ".";
 
-const titleWords = [
-  {
-    text: 'Lorem.'
-  },
-  {
-    text: 'Ipsum.'
-  },
-  {
-    text: 'Dolor.'
-  },
-];
+const titleIntroText = `Hello, my name is`;
+const titleText = `Alexis Marroquin.`;
+const subTitleText = `I build web apps.`;
 
 export const home = {
-  title: {
-    words: createIds('word_id', titleWords, true)
-  },
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  titleIntro: titleIntroText,
+  title: titleText,
+  subTitle: subTitleText,
+  description: "I am passionate about creating digital solutions for people and businesses.",
+  headshot: {
+    ...headshot,
+    width: '200px',
+    height: '200px',
+    borderRadius: '50%',
+    border: '.5rem solid #fff'
+  }
 }

@@ -19,6 +19,6 @@ export const Button = (props) => {
     borderRadius={props.borderRadius}
     padding={props.padding}
     onClick={props.onClick ? props.onClick : () => {}}
-  >{props.text ? props.text : ''}</StyledButton>
+  >{props.text && <p>{props.text}</p>}</StyledButton>
   )
 }

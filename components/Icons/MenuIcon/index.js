@@ -2,6 +2,7 @@ import { useToggle } from "../../../hooks";
 import styled from "styled-components";
 
 const StyledMenuIcon = styled.div`
+  transform: scale(1.5);
   display: inline-block;
   
   div {

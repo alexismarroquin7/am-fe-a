@@ -3,6 +3,7 @@ import styled from "styled-components"
 const StyledGrid = styled.div`
   width: ${({width}) => width ? width : 'auto'};
   border: ${({border}) => border ? border : '0'};
+  border-radius: ${({borderRadius}) => borderRadius ? borderRadius : '0'};
   
   display: flex;
   
@@ -21,6 +22,7 @@ export const Grid = (props) => {
   <StyledGrid
     width={props.width}
     border={props.border}
+    borderRadius={props.borderRadius}
     
     direction={props.direction}
     justify={props.justify}
