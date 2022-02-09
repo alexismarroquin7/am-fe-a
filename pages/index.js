@@ -1,8 +1,11 @@
+// router
+import { useRouter } from "next/router";
+
 // data
 import { home } from "../data";
 
 // components
-import { Card, Section, Button, Grid } from "../components";
+import { Section, Button, Grid } from "../components";
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -11,7 +14,10 @@ import { useTheme } from "styled-components";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  
+  const router = useRouter();
   const theme = useTheme();
+  
   return (
     <Section
       bgColor={theme.color.secondary.value}
@@ -67,15 +73,17 @@ export default function Home() {
           direction="column wrap"
           gap={theme.gap.secondary}
         >
-          <Button
-            width="100%"  
-            text={"About"}
-          />
-
-          <Button
-            width="100%"
-            text={"Contact"}
-          />
+          {home.buttons.map(button => (
+            <Button
+              key={button.button_id}
+              width="100%"  
+              text={button.text}
+              onClick={() => {
+                router.push(button.href);
+              }}
+              variant={button.variant}
+            />
+          ))}
         </Grid>
 
       </Grid>
