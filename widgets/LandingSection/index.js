@@ -46,10 +46,12 @@ export const LandingSection = () => {
         borderRadius={home.headshot.borderRadius}
       >
         <Image
+          className={styles.headshot}
           src={home.headshot.src}
           width={home.headshot.width}
           height={home.headshot.height}
-          className={styles.headshot}
+          alt={home.headshot.alt}
+          title={home.headshot.title}
         />    
       </Grid>
     
