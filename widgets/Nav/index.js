@@ -15,7 +15,7 @@ export const Nav = () => {
     justify="space-between"
     alignItems="center"
     width="100%"
-    padding="1rem 4rem 1rem 4.5rem"
+    padding="1rem 2rem 1rem 2.5rem"
     boxShadow={`0px 0px 5px ${theme.color.black}`}
   >
     <MenuIcon 
