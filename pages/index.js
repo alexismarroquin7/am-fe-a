@@ -27,7 +27,7 @@ export default function Home() {
         width="90%"
         direction="column wrap"
         alignItems="center"
-        gap={theme.gap.primary}
+        gap={theme.gap.secondary}
       >
         
         <Grid
@@ -62,18 +62,23 @@ export default function Home() {
           <h5>{home.description}</h5>
         </Grid>
 
-        <Button
+        <Grid
           width="100%"
-          text={"About"}
-        />
+          direction="column wrap"
+          gap={theme.gap.secondary}
+        >
+          <Button
+            width="100%"  
+            text={"About"}
+          />
 
-        <Button
-          width="100%"
-          text={"Contact"}
-        />
+          <Button
+            width="100%"
+            text={"Contact"}
+          />
+        </Grid>
 
       </Grid>
-
     
         
     </Section>

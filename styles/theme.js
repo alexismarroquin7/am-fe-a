@@ -13,7 +13,8 @@ const sharedTheme = {
     primary: "1rem"
   },
   gap: {
-    primary: "2rem"
+    primary: "1rem",
+    secondary: "2rem"
   },
 } 
 
