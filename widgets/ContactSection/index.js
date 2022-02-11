@@ -13,7 +13,9 @@ export const ContactSection = () => {
   const theme = useTheme();
 
   return (
-  <Section>
+  <Section
+    bgColor={theme.color.secondary.value}
+  >
 
     <Grid
       width="90%"

@@ -15,6 +15,8 @@ const StyledGrid = styled.div`
   box-shadow: ${({boxShadow}) => boxShadow ? boxShadow : 'none'};
   
   padding: ${({padding}) => padding ? padding : '0'};
+
+  background-color: ${({bgColor}) => bgColor ? bgColor : 'none'};
 `
 
 export const Grid = (props) => {
@@ -32,6 +34,7 @@ export const Grid = (props) => {
     boxShadow={props.boxShadow}
     
     padding={props.padding}
+    bgColor={props.bgColor}
   >{props.children}</StyledGrid>
   )
 }

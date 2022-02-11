@@ -15,6 +15,7 @@ export const SkillsSection = () => {
       width="90%"
       direction="column wrap"
       alignItems="center"
+      gap={theme.gap.secondary}
     >
 
       <h3>{skills.title}</h3>
@@ -22,13 +23,14 @@ export const SkillsSection = () => {
       <Grid
         direction="column wrap"
         alignItems="center"
-        gap={theme.gap.primary}
+        gap={theme.gap.secondary}
       >
-        {skills.list.map(skill => (
+        {skills.list.map((skill) => (
           <Grid
             key={skill.skill_id}
             direction="column wrap"
             alignItems="center"
+            gap={theme.gap.primary}
           >
             <h6>{skill.name}</h6>
             <p>{skill.description}</p>
