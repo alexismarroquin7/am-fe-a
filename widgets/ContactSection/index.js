@@ -23,7 +23,7 @@ export const ContactSection = () => {
       alignItems="center"
       gap={theme.gap.secondary}
     >
-      <h3>{contact.title}</h3>
+      <h4>{contact.title}</h4>
 
       <Grid
         alignItems="center"
