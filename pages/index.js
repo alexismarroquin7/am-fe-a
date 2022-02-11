@@ -3,7 +3,7 @@ import { Grid } from "../components";
 import Head from 'next/head';
 
 // styles
-import { LandingSection, ContactSection } from "../widgets";
+import { LandingSection, ContactSection, SkillsSection } from "../widgets";
 
 export default function Home() {
   
@@ -16,6 +16,7 @@ export default function Home() {
     </Head>
 
     <LandingSection/>
+    <SkillsSection/>
     <ContactSection/>
     
   </Grid>
