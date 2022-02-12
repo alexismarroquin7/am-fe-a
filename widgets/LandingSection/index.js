@@ -20,6 +20,8 @@ export const LandingSection = () => {
   return (
   <Section
     bgColor={theme.color.secondary.value}
+    color={theme.color.primary.value}
+
   >
     <Grid
       width="90%"
@@ -52,14 +54,15 @@ export const LandingSection = () => {
           height={home.headshot.height}
           alt={home.headshot.alt}
           title={home.headshot.title}
-        />    
+        />
       </Grid>
     
       <Grid
         direction="column wrap"
+        alignItems="center"
         gap={theme.gap.primary}
       >
-        <h5>{home.description}</h5>
+        <h6>{home.description}</h6>
       </Grid>
 
       <Grid
