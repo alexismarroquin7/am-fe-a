@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-const StyledSection = styled.section`
-  width: ${({width}) => width ? width : '100%'};
+const StyledFooter = styled.footer`
+  width: ${({width}) => width ? width : `100%`};
   height: ${({height}) => height ? height : 'auto'};
   border: ${({border}) => border ? border : 'none'};
   
@@ -14,20 +14,16 @@ const StyledSection = styled.section`
   background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
   color: ${({color, theme}) => color ? color : theme.color.black};
   
-  
-`
+`;
 
-export const Section = (props) => {
+export const Footer = (props) => {
   return (
-  <StyledSection
+  <StyledFooter
     width={props.width}
     height={props.height}
     border={props.border}
-    padding={props.padding}
-    bgColor={props.bgColor}
-    color={props.color}
   >
     {props.children}
-  </StyledSection>
-  )
-}
+  </StyledFooter>
+  );
+};

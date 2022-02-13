@@ -2,8 +2,8 @@
 import { Grid } from "../components";
 import Head from 'next/head';
 
-// styles
-import { LandingSection, ContactSection, SkillsSection } from "../widgets";
+// widgets
+import { LandingSection, ContactSection, SkillsSection, FooterSection } from "../widgets";
 
 export default function Home() {
   
@@ -18,7 +18,8 @@ export default function Home() {
     <LandingSection/>
     <SkillsSection/>
     <ContactSection/>
-    
+    <FooterSection/>
+
   </Grid>
   )
 }
