@@ -1,12 +1,13 @@
 // components
-import { Grid } from "../components";
+import { Border, Grid } from "../components";
 import Head from 'next/head';
 
 // widgets
 import { LandingSection, ContactSection, SkillsSection, FooterSection } from "../widgets";
+import { useTheme } from "styled-components";
 
 export default function Home() {
-  
+  const theme = useTheme();
   return (
   <Grid>
     <Head>

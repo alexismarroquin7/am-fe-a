@@ -2,7 +2,7 @@
 import { skills } from "../../data";
 
 // components
-import { Grid, Section } from "../../components";
+import { Border, Grid, Section } from "../../components";
 
 // styles
 import { useTheme } from "styled-components";
@@ -22,7 +22,12 @@ export const SkillsSection = () => {
     >
 
       <h3>{skills.title}</h3>
-    
+
+      <Border
+        width={"90%"}
+        bgColor={theme.color.secondary.value}
+      />
+
       <Grid
         direction="column wrap"
         alignItems="center"
