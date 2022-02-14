@@ -12,12 +12,12 @@ export const SkillsSection = () => {
   const theme = useTheme();
   return (
   <Section
-    padding="0"
+    bgColor={theme.color.primary.value}  
+    color={theme.color.secondary.value}  
   >
     <Grid
       direction="column wrap"
       alignItems="center"
-      padding="2rem 0 0 0"
       gap={theme.gap.secondary}
     >
 

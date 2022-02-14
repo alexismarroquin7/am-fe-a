@@ -10,7 +10,7 @@ const StyledSection = styled.section`
   align-items: center;
   justify-content: center;
 
-  padding: ${({padding}) => padding ? padding : '2rem 0'};
+  padding: ${({padding}) => padding ? padding : '4rem 0'};
   background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
   color: ${({color, theme}) => color ? color : theme.color.black};
   

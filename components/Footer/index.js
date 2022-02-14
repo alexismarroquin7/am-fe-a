@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
 
-  padding: ${({padding}) => padding ? padding : '2rem 0'};
+  padding: ${({padding}) => padding ? padding : '4rem 0'};
   background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
   color: ${({color, theme}) => color ? color : theme.color.black};
   
@@ -22,6 +22,9 @@ export const Footer = (props) => {
     width={props.width}
     height={props.height}
     border={props.border}
+    padding={props.padding}
+    color={props.color}
+    bgColor={props.bgColor}
   >
     {props.children}
   </StyledFooter>
