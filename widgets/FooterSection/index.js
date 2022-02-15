@@ -12,7 +12,7 @@ export const FooterSection = () => {
   return (
   <Footer
     bgColor={theme.color.secondary.value}
-    color={theme.color.primary.value}
+    color={theme.color.white}
     padding="0 0 4rem 0"
   >
     <Border
@@ -30,7 +30,7 @@ export const FooterSection = () => {
       <p>{footer.text.top}</p>
       <p
         style={{
-          color: theme.color.white
+          color: theme.color.primary.value
         }}
       >{footer.text.middle}</p>
       <p>{footer.text.bottom}</p>
