@@ -14,7 +14,17 @@ const StyledSection = styled.section`
   background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
   color: ${({color, theme}) => color ? color : theme.color.black};
   
+  position: ${({position}) => position ? position : 'static'};
+  z-index: ${({zIndex}) => zIndex ? zIndex : '0'};
+
+  top: ${({top}) => top ? top : 'auto'};
+  bottom: ${({bottom}) => bottom ? bottom : 'auto'};
+  left: ${({left}) => left ? left : 'auto'};
+  right: ${({right}) => right ? right : 'auto'};
+
+  transition: ${({transition}) => transition ? transition : 'none'};
   
+  overflow: ${({overflow}) => overflow ? overflow : 'visible'};
 `
 
 export const Section = (props) => {
@@ -26,6 +36,19 @@ export const Section = (props) => {
     padding={props.padding}
     bgColor={props.bgColor}
     color={props.color}
+
+    position={props.position}
+    zIndex={props.zIndex}
+    top={props.top}
+    bottom={props.bottom}
+    left={props.left}
+    right={props.right}
+
+    transition={props.transition}
+
+    overflow={props.overflow}
+
+    id={props.id || ''}
   >
     {props.children}
   </StyledSection>

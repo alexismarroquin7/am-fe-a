@@ -14,6 +14,7 @@ export const SkillsSection = () => {
   <Section
     bgColor={theme.color.primary.value}  
     color={theme.color.secondary.value}  
+    id={skills.id}
   >
     <Grid
       direction="column wrap"

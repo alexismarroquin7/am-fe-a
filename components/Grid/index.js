@@ -18,6 +18,17 @@ const StyledGrid = styled.div`
 
   background-color: ${({bgColor}) => bgColor ? bgColor : 'none'};
   color: ${({color}) => color ? color : 'none'};
+
+  position: ${({position}) => position ? position : 'static'};
+  z-index: ${({zIndex}) => zIndex ? zIndex : '0'};
+
+  top: ${({top}) => top ? top : 'auto'};
+  bottom: ${({bottom}) => bottom ? bottom : 'auto'};
+  left: ${({left}) => left ? left : 'auto'};
+  right: ${({right}) => right ? right : 'auto'};
+
+  transition: ${({transition}) => transition ? transition : 'none'};
+  overflow: ${({overflow}) => overflow ? overflow : 'visible'};
 `
 
 export const Grid = (props) => {
@@ -37,6 +48,17 @@ export const Grid = (props) => {
     padding={props.padding}
     bgColor={props.bgColor}
     color={props.color}
+
+    position={props.position}
+    zIndex={props.zIndex}
+
+    top={props.top}
+    bottom={props.bottom}
+    left={props.left}
+    right={props.right}
+
+    transition={props.transition}
+    overflow={props.overflow}
   >{props.children}</StyledGrid>
   )
 }

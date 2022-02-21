@@ -1,5 +1,6 @@
 import { useToggle } from "../../../hooks";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const StyledMenuIcon = styled.div`
   transform: scale(1.5);
@@ -37,13 +38,13 @@ const StyledMenuIcon = styled.div`
 
 `
 
-export const MenuIcon = ({open, onClick}) => {
-  const {toggled: menuOpen, flipToggle: toggleMenuOpen} = useToggle(open);
+export const MenuIcon = ({onClick}) => {
+  const open = useSelector(s => s.nav.menu.open);
   return (
   <StyledMenuIcon
-    open={menuOpen}
+    open={open}
     onClick={() => {
-      toggleMenuOpen();
+      // toggleMenuOpen();
       if(onClick){
         onClick();
       }

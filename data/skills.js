@@ -20,5 +20,6 @@ const skillsList = [
 
 export const skills = {
   title: `My Skills`,
-  list: createIds('skill_id', skillsList, true)
+  list: createIds('skill_id', skillsList, true),
+  id: "skills"
 }

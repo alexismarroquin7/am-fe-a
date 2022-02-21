@@ -15,6 +15,7 @@ export const ContactSection = () => {
   return (
   <Section
     bgColor={theme.color.secondary.value}
+    id={contact.id}
   >
 
     <Grid

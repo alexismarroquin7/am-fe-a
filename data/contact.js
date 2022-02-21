@@ -18,5 +18,6 @@ const contactLines = [
 
 export const contact = {
   title: "Let's get in touch.",
-  lines: createIds('line_id', contactLines, true) 
+  lines: createIds('line_id', contactLines, true),
+  id: "contact"
 }
