@@ -22,6 +22,7 @@ export const LandingSection = () => {
     bgColor={theme.color.secondary.value}
     color={theme.color.primary.value}
     padding="8rem 0 4rem 0"
+    id={home.id}
   >
     <Grid
       width="90%"

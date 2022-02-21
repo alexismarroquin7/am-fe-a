@@ -2,6 +2,11 @@ import { createIds } from "../utils"
 
 const routeList = [
   {
+    name: "Home",
+    href: "#home",
+    variant: "outlined"
+  },
+  {
     name: "Skills",
     href: "#skills",
     variant: "outlined"

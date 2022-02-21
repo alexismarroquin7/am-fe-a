@@ -20,6 +20,7 @@ const buttons = [
 ]
 
 export const home = {
+  id: "home",
   titleIntro: titleIntroText,
   title: titleText,
   subTitle: subTitleText,

@@ -49,15 +49,15 @@ export const MobileMenu = () => {
     height="100vh"
   >
     <Grid
-      border="1px solid red"
       direction="column wrap"
       alignItems="center"
+      gap={theme.gap.secondary}
     >
       {routes.map(route => (
-        <Button
+        <h3
           key={route.route_id}
-          color={theme.color.black}
-          text={route.name}
+          // color={theme.color.black}
+          // text={route.name}
           onClick={() => {
             dispatch(NavAction.menu.close());
             const element = document
@@ -70,7 +70,7 @@ export const MobileMenu = () => {
               inline: "nearest"
             });
           }}
-        />
+        >{route.name}</h3>
       ))}
     </Grid>
 
