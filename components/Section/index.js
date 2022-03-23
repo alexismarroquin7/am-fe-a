@@ -30,24 +30,7 @@ const StyledSection = styled.section`
 export const Section = (props) => {
   return (
   <StyledSection
-    width={props.width}
-    height={props.height}
-    border={props.border}
-    padding={props.padding}
-    bgColor={props.bgColor}
-    color={props.color}
-
-    position={props.position}
-    zIndex={props.zIndex}
-    top={props.top}
-    bottom={props.bottom}
-    left={props.left}
-    right={props.right}
-
-    transition={props.transition}
-
-    overflow={props.overflow}
-
+    {...props}
     id={props.id || ''}
   >
     {props.children}
