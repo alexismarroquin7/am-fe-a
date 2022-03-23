@@ -24,7 +24,8 @@ export const ContactSection = () => {
       alignItems="center"
       gap={theme.gap.secondary}
     >
-      <h4>{contact.title}</h4>
+      
+      <p style={{fontWeight: "bold"}}>{contact.title}</p>
 
       <Grid
         alignItems="center"
@@ -43,6 +44,7 @@ export const ContactSection = () => {
                 src={line.icon.src}
                 width="50px"
                 height="50px"
+                alt={line.icon.alt}
               />
             </a>
           </Grid>

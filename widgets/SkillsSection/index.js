@@ -55,7 +55,7 @@ export const SkillsSection = () => {
               <Grid
                 padding="5rem"
                 borderRadius="50%"
-                border={isOdd(i) ? ".5rem solid #fff" : ""}
+                border={isOdd(i) ? `.5rem solid ${theme.color.primary.value}` : ""}
                 bgColor={theme.color.secondary.value}
               >
 
@@ -70,12 +70,14 @@ export const SkillsSection = () => {
               <Grid
                 direction="column wrap"
                 alignItems="center"
+                justify="center"
                 gap="2rem"
               >
-                <h6>{skill.name}</h6>
+                <p style={{ fontWeight: 'bold' }}>{skill.name}</p>
                 <p>{skill.description}</p>
               </Grid>
 
+            
             </Grid>
           </Grid>
         ))}
