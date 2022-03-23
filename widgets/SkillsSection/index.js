@@ -8,6 +8,8 @@ import { Border, Grid, Section } from "../../components";
 import { useTheme } from "styled-components";
 import { isEven, isOdd } from "../../utils";
 
+import Image from "next/image"
+
 export const SkillsSection = () => {
   const theme = useTheme();
   return (
@@ -47,16 +49,33 @@ export const SkillsSection = () => {
               width="90%"
               direction="column wrap"
               alignItems="center"
-              gap={theme.gap.secondary}
+              gap="4rem"
             >
               {/* Grid to be icon */}
               <Grid
                 padding="5rem"
                 borderRadius="50%"
-                border=".5rem solid #fff"
-              ></Grid>
-              <h6>{skill.name}</h6>
-              <p>{skill.description}</p>
+                border={isOdd(i) ? ".5rem solid #fff" : ""}
+                bgColor={theme.color.secondary.value}
+              >
+
+                <Image
+                  src={skill.icon.src}
+                  width="50px"
+                  height="50px"
+                  alt={skill.icon.alt}
+                />
+              </Grid>
+
+              <Grid
+                direction="column wrap"
+                alignItems="center"
+                gap="2rem"
+              >
+                <h6>{skill.name}</h6>
+                <p>{skill.description}</p>
+              </Grid>
+
             </Grid>
           </Grid>
         ))}

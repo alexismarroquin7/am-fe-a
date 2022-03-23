@@ -1,2 +1,5 @@
 export * from "./email"
 export * from "./github"
+export * from "./responsive-web-design"
+export * from "./rest-apis"
+export * from "./wireframing-and-prototyping"
