@@ -1,5 +1,5 @@
 import { createIds } from "../utils";
-import { responsiveWebDesign, wireframingAndPrototyping, restApis } from "./images";
+import { responsiveWebDesign, wireframingAndPrototyping, restApi } from "./images";
 
 const skillsList = [
   {
@@ -13,9 +13,9 @@ const skillsList = [
     icon: wireframingAndPrototyping
   },
   {
-    name: 'REST APIs',
-    description: 'I create the ability to dynamically view, create, update, and delete any data that changes.',
-    icon: restApis
+    name: 'Dynamic Content',
+    description: 'I create the REST APIs that allow for automatic updates to any content that changes.',
+    icon: restApi
   }
 ];
 
