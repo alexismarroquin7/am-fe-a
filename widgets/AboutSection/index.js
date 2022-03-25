@@ -40,7 +40,19 @@ export const AboutSection = () => {
           />
         </Grid>
 
-        <p>{about.description}</p>
+        <Grid
+          width="100%"
+          gap="2rem"
+        >
+          {about.description.map((paragraph, i, arr) => (
+            <p
+              key={paragraph.id}
+              style={{
+                color: i === arr.length - 1 ? theme.color.white : theme.color.black
+              }}
+            >{paragraph.text}</p>
+          ))}
+        </Grid>
         
       </Grid>
     </Section>
