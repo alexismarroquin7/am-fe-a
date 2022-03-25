@@ -33,6 +33,7 @@ export const LandingSection = () => {
       
       <Grid
         direction="column wrap"
+        width="100%"
         gap={theme.gap.primary}
       >
         <p>{home.titleIntro}</p>

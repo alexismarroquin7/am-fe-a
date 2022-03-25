@@ -12,6 +12,11 @@ const routeList = [
     variant: "outlined"
   },
   {
+    name: "About",
+    href: "#about",
+    variant: "outlined"
+  },
+  {
     name: "Contact",
     href: "#contact",
     variant: "outlined"

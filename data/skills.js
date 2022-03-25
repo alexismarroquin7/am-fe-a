@@ -1,20 +1,21 @@
 import { createIds } from "../utils";
+import { responsiveWebDesign, wireframingAndPrototyping, restApi } from "./images";
 
 const skillsList = [
   {
     name: 'Responsive Web Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    icon: {}
+    description: 'I use a modern approach that optimizes layouts for any device from desktops, to tablets, and mobile phones.',
+    icon: responsiveWebDesign
   },
   {
     name: 'Wireframing & Prototyping',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    icon: {}
+    description: 'I make low-fidelity designs to provide an opportunity to walk through the structure of a website before making design desicions.',
+    icon: wireframingAndPrototyping
   },
   {
-    name: 'REST APIs',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    icon: {}
+    name: 'Dynamic Content',
+    description: 'I create the REST APIs that allow for automatic updates to any content that changes.',
+    icon: restApi
   }
 ];
 
