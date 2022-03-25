@@ -26,6 +26,7 @@ export const ContactSection = () => {
     >
       
       <p style={{fontWeight: "bold"}}>{contact.title}</p>
+      
 
       <Grid
         alignItems="center"

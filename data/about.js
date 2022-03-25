@@ -16,7 +16,7 @@ export const about = {
     },
     {
       id: uuidv4(),
-      text: `My interests include technology, language learning, travel, filmmaking, latin music, and podcasts.`
+      text: `My interests include technology, language learning, travel, culinary arts, filmmaking, latin music, and podcasts.`
     },
     {
       id: uuidv4(),
