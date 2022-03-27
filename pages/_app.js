@@ -36,7 +36,6 @@ function MyApp({ Component, pageProps }) {
         direction="column wrap"
         alignItems="center"
         position="relative"
-        // height="100%"
       >
         <Nav />
         <MobileMenu />
