@@ -5,8 +5,7 @@ const StyledAlexisMarroquinLogo = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  background-color: ;
-
+  
   h5 {
     display: flex;
     flex-flow: row wrap;
@@ -21,6 +20,7 @@ const StyledAlexisMarroquinLogo = styled.div`
 
   span:nth-child(1){
     color: ${({ theme }) => theme.color.black};
+    padding: 0 .5rem;
   }
   
   span:nth-child(2){
@@ -34,7 +34,7 @@ export const AlexisMarroquinLogo = () => {
   <StyledAlexisMarroquinLogo>
     <h5>
       {'<'}
-      <span>{'AM'}</span>
+      <span>{'AlexisMarroquin'}</span>
       <span>{'/'}</span>
       {'>'}
     </h5>
