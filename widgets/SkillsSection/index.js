@@ -45,6 +45,7 @@ const StyledSkillsSection = styled.div`
   }
   
   .SkillsSection__Section__Wrapper__Skill__Wrapper__Text h6 {
+    width: 100%;
     font-weight: bold;
     text-align: center;
   }
