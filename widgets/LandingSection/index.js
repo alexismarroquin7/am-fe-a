@@ -104,7 +104,6 @@ export const LandingSection = () => {
 
   return (
   <StyledLandingSection>
-
     <Section
       className="LandingSection__Section"
       id={home.id}
