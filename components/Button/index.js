@@ -39,7 +39,7 @@ const StyledButton = styled.button`
     
     return colorToUse;
   }};
-  border: ${({border}) => {
+  border: ${({border, variant}) => {
     let borderToUse;
       
     if(border){
@@ -51,6 +51,9 @@ const StyledButton = styled.button`
 
       }
     
+    } else if(variant === 'outlined'){
+      borderToUse = '.2rem solid white';
+
     } else {
       borderToUse = '0';
       
@@ -65,14 +68,8 @@ const StyledButton = styled.button`
 export const Button = (props) => {
   return (
   <StyledButton
-    width={props.width}
-    color={props.color}
-    bgColor={props.bgColor}
-    border={props.border}
-    borderRadius={props.borderRadius}
-    padding={props.padding}
+    {...props}
     onClick={props.onClick ? props.onClick : () => {}}
-    variant={props.variant}
   >{props.text && <p>{props.text}</p>}</StyledButton>
   )
 }

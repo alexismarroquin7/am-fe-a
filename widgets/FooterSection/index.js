@@ -10,16 +10,13 @@ import { useTheme } from "styled-components";
 export const FooterSection = () => {
   const theme = useTheme();
   return (
+  
   <Footer
-    bgColor={theme.color.secondary.value}
+    bgColor={theme.color.primary.value}
     color={theme.color.white}
     padding="0 0 4rem 0"
   >
-    <Border
-      width="90%"
-      bgColor={theme.color.primary.value}
-    />
-
+    
     <Grid
       width="90%"
       direction="column wrap"
@@ -30,11 +27,12 @@ export const FooterSection = () => {
       <p>{footer.text.top}</p>
       <p
         style={{
-          color: theme.color.primary.value
+          color: theme.color.secondary.value
         }}
       >{footer.text.middle}</p>
       <p>{footer.text.bottom}</p>
     </Grid>
   </Footer>
+
   )
 }

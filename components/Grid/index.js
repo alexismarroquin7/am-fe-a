@@ -34,31 +34,7 @@ const StyledGrid = styled.div`
 export const Grid = (props) => {
   return (
   <StyledGrid
-    width={props.width}
-    border={props.border}
-    borderRadius={props.borderRadius}
-    
-    direction={props.direction}
-    justify={props.justify}
-    alignItems={props.alignItems}
-    gap={props.gap}
-
-    boxShadow={props.boxShadow}
-    
-    padding={props.padding}
-    bgColor={props.bgColor}
-    color={props.color}
-
-    position={props.position}
-    zIndex={props.zIndex}
-
-    top={props.top}
-    bottom={props.bottom}
-    left={props.left}
-    right={props.right}
-
-    transition={props.transition}
-    overflow={props.overflow}
+    {...props}
   >{props.children}</StyledGrid>
   )
 }

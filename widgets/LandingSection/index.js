@@ -11,6 +11,91 @@ import Image from 'next/image';
 // styles
 import { useTheme } from "styled-components";
 import styles from "../../styles/LandingSection.module.css";
+import styled from "styled-components";
+
+const StyledLandingSection = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 8rem 0 2rem 0;
+
+  .LandingSection__Section {
+    background-color: ${({theme}) => theme.color.secondary.value};
+    color: ${({theme}) => theme.color.primary.value};
+  }
+
+  .LandingSection__Section__Wrapper {
+    width: 90%;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: ${({theme}) => theme.gap.secondary};
+  }
+  
+  
+  .LandingSection__Section__Wrapper__Title {
+    width: 100%;
+    flex-flow: column wrap;
+    gap: 1rem;
+  }
+  
+  .LandingSection__Section__Wrapper__DescriptionContainer {
+    width: 100%;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .LandingSection__Section__Wrapper__DescriptionContainer p {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .LandingSection__Section__Wrapper__ButtonContainer {
+    width: 100%;
+    direction: column wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .LandingSection__Section__Wrapper__ButtonContainer__Button {
+    width: 100%;
+  }
+  
+  
+  @media (min-width: 1025px) {
+    
+    .LandingSection__Section__Wrapper {
+      width: 50%;
+    }
+    
+    .LandingSection__Section__Wrapper__Top {
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+    
+    .LandingSection__Section__Wrapper__DescriptionContainer {
+      flex-flow: row-reverse wrap;
+      justify-content: space-between;
+    }
+
+    .LandingSection__Section__Wrapper__DescriptionContainer p {
+      width: 50%;
+      text-align: left;
+
+    }
+
+    .LandingSection__Section__Wrapper__ButtonContainer {
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    .LandingSection__Section__Wrapper__ButtonContainer__Button {
+      width: 20%;
+    }
+
+  }
+`
 
 export const LandingSection = () => {
   
@@ -18,74 +103,69 @@ export const LandingSection = () => {
   const theme = useTheme();
 
   return (
-  <Section
-    bgColor={theme.color.secondary.value}
-    color={theme.color.primary.value}
-    padding="8rem 0 4rem 0"
-    id={home.id}
-  >
-    <Grid
-      width="90%"
-      direction="column wrap"
-      alignItems="center"
-      gap={theme.gap.secondary}
+  <StyledLandingSection>
+    <Section
+      className="LandingSection__Section"
+      id={home.id}
     >
-      
       <Grid
-        direction="column wrap"
-        width="100%"
-        gap={theme.gap.primary}
+        className="LandingSection__Section__Wrapper"  
       >
-        <p>{home.titleIntro}</p>
-        <h2
-          style={{
-            color: theme.color.white
-          }}
-        >{home.title}</h2>
-        <h2>{home.subTitle}</h2>
-      </Grid>
-
-      <Grid
-        border={home.headshot.border}
-        borderRadius={home.headshot.borderRadius}
-      >
-        <Image
-          className={styles.headshot}
-          src={home.headshot.src}
-          width={home.headshot.width}
-          height={home.headshot.height}
-          alt={home.headshot.alt}
-          title={home.headshot.title}
-        />
-      </Grid>
-    
-      <Grid
-        direction="column wrap"
-        alignItems="center"
-        gap={theme.gap.primary}
-      >
-        <h6>{home.description}</h6>
-      </Grid>
-
-      <Grid
-        width="100%"
-        direction="column wrap"
-        gap={theme.gap.secondary}
-      >
-        {home.buttons.map(button => (
-          <Button
-            key={button.button_id}
-            width="100%"  
-            text={button.text}
-            onClick={() => {
-              router.push(button.href);
+        
+        <Grid
+          className="LandingSection__Section__Wrapper__Title"
+        >
+          <p>{home.titleIntro}</p>
+          <h2
+            style={{
+              color: theme.color.white
             }}
-            variant={button.variant}
-          />
-        ))}
-      </Grid>
+          >{home.title}</h2>
+          <h2>{home.subTitle}</h2>
+        </Grid>
+        
 
-    </Grid>
-  </Section>
+        <Grid
+          className="LandingSection__Section__Wrapper__DescriptionContainer"
+          
+        >
+          <Grid
+            border={home.headshot.border}
+            borderRadius={home.headshot.borderRadius}
+          >
+            <Image
+              className={styles.headshot}
+              src={home.headshot.src}
+              width={home.headshot.width}
+              height={home.headshot.height}
+              alt={home.headshot.alt}
+              title={home.headshot.title}
+            />
+          </Grid>
+
+          <p>{home.description}</p>
+
+        </Grid>
+
+        <Grid
+          className="LandingSection__Section__Wrapper__ButtonContainer"
+        >
+          {home.buttons.map(button => (
+            <Button
+              className="LandingSection__Section__Wrapper__ButtonContainer__Button"
+              key={button.button_id}
+              text={button.text}
+              onClick={() => {
+                router.push(button.href);
+              }}
+              variant={button.variant}
+            />
+          ))}
+        </Grid>
+
+      </Grid>
+    </Section>
+  </StyledLandingSection>
+  
   )
 }

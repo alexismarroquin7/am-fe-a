@@ -9,9 +9,7 @@ const StyledBorder = styled.div`
 export const Border = (props) => {
   return (
   <StyledBorder
-    width={props.width}
-    padding={props.padding}
-    bgColor={props.bgColor}
+    {...props}
   ></StyledBorder>
   )
 }
