@@ -14,7 +14,7 @@ const skillsList = [
   },
   {
     name: 'Dynamic Content',
-    description: 'I create the REST APIs that allow for automatic updates to any content that changes.',
+    description: 'I create REST APIs that allow for automatic updates to any content that changes.',
     icon: restApi
   }
 ];
