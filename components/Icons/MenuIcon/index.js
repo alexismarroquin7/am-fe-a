@@ -1,60 +1,54 @@
-import { useToggle } from "../../../hooks";
-import styled from "styled-components";
-import { useSelector } from "react-redux";
-
-const StyledMenuIcon = styled.div`
-  transform: scale(1.5);
-  display: inline-block;
-  
-  div {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    gap: .4rem;
-  
-    span {
-      width: 2rem;
-      height: .2rem;
-      background-color: ${({open}) => open ? 'red' : 'black' };
-      transition: all .2s;
-    }
-    
-    span:nth-child(1){
-      transform: ${({open}) => open ? 'rotate(-45deg) translate(0rem, .3rem)' : 'rotate(0deg)' };
-      width: ${({open}) => open ? '50%' : '100%' };
-    }
-    
-    span:nth-child(2){
-      transform: ${({open}) => open ? 'rotate(45deg)' : 'rotate(0deg)' }
-      
-    }
-    span:nth-child(3){
-      transform: ${({open}) => open ? 'rotate(-45deg) translate(-.2rem, -.5rem)' : 'rotate(0deg)' };
-      width: ${({open}) => open ? '50%' : '100%' };
-    }
-  }
-
-
-`
-
-export const MenuIcon = ({onClick}) => {
-  const open = useSelector(s => s.nav.menu.open);
+export const MenuIcon = ({onClick, open}) => {
   return (
-  <StyledMenuIcon
-    open={open}
-    onClick={() => {
-      // toggleMenuOpen();
-      if(onClick){
-        onClick();
-      }
-    }}
-  >
-    <div>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </StyledMenuIcon>
-  )
-}
+    <button
+      onClick={(e) => {
+        if (typeof onClick !== "function") return;
+        onClick(e);
+      }}
+    >
+      <span className={`top ${open ? 'open' : ''}`} />
+      <span className={`middle ${open ? 'open' : ''}`} />
+      <span className={`bottom ${open ? 'open' : ''}`} />
+      
+      <style jsx>{`
+        button {
+          display: flex;
+          flex-flow: column wrap;
+          border: 0;
+          justify-content: space-between;
+          background-color: transparent;
+        }
+        
+        .top,
+        .middle,
+        .bottom {
+          background-color: black;
+          padding: .1rem 1.5rem;
+          transition: all .2s;
+        }
+
+        .top,
+        .bottom {
+          transform-origin: left;
+        }
+        
+        .top.open {
+          transform: rotate(45deg);
+        }
+
+        .middle.open {
+          opacity: 0;
+        }
+
+        .bottom.open {
+          transform: rotate(-45deg);
+        }
+
+        .open {
+          background-color: red;
+        }
+
+      `}</style>
+    </button>
+  );
+};

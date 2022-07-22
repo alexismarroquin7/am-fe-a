@@ -2,58 +2,72 @@
 import { contact } from "../../data";
 
 // components
-import { Section, Grid } from "../../components";
 import Image from 'next/image';
 
-// style
-import { useTheme } from "styled-components";
-
 export const ContactSection = () => {
-  
-  const theme = useTheme();
 
   return (
-  <Section
-    bgColor={theme.color.secondary.value}
+  <section
+    className="contact-section"
     id={contact.id}
   >
+    <p className="contact-section-title">{contact.title}</p>      
 
-    <Grid
-      width="90%"
-      direction="column wrap"
-      alignItems="center"
-      gap={theme.gap.secondary}
+    <div
+      className="contact-list"
     >
-      
-      <p style={{fontWeight: "bold"}}>{contact.title}</p>
-      
-
-      <Grid
-        alignItems="center"
-        gap={theme.gap.secondary}
-      >
-        {contact.lines.map(line => (
-          <Grid
-            key={line.line_id}
+      {contact.lines.map(line => (
+        <div
+          key={line.line_id}
+        >
+          <a 
+            title={line.name}
+            href={line.href}
+            target={line.target}
           >
-            <a 
-              title={line.name}
-              href={line.href}
-              target={line.target}
-            >
-              <Image
-                src={line.icon.src}
-                width="50px"
-                height="50px"
-                alt={line.icon.alt}
-              />
-            </a>
-          </Grid>
-        ))}
-      </Grid>
+            <Image
+              src={line.icon.src}
+              width="50px"
+              height="50px"
+              alt={line.icon.alt}
+            />
+            {line.handle}
+          </a>
+        </div>
+      ))}
+    </div>
 
-    </Grid>  
-  
-  </Section>
+    <style jsx>{`
+      .contact-section {
+        width: 100%;
+        padding: 4rem 2rem;
+        display: flex;
+        flex-flow: column wrap;
+        gap: 2rem;
+      }
+
+      .contact-section-title {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .contact-list {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 25%;
+      }
+
+      a {
+        font-size: 1rem;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        color: black;
+      }
+    `}</style>
+  </section>
   )
 }

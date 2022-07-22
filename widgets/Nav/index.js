@@ -1,42 +1,30 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useTheme } from "styled-components";
-import { AlexisMarroquinLogo, Grid, MenuIcon } from "../../components";
-import { NavAction } from "../../store";
+import { AlexisMarroquinLogo, MenuIcon } from "../../components";
 
-
-const navTopValues = {
-  active: "0rem",
-  hidden: "-8rem"
-}
-
-export const Nav = () => {
-
-  const nav = useSelector(s => s.nav);
-  const dispatch = useDispatch();
-
-  const theme = useTheme();
-
+export const Nav = ({open, onClick}) => {
   return (
-  <Grid
-    justify="space-between"
-    alignItems="center"
-    width="100%"
-    padding="1rem 2rem 1rem 2.5rem"
-    boxShadow={`0px 0px 5px ${theme.color.black}`}
-    zIndex={"1000"}
-    position="fixed"
-    bgColor={theme.color.white}
-    transition={theme.transition.primary}
-  >
+  <div className="nav">
     <MenuIcon 
-      onClick={() => {
-        nav.menu.open 
-        ? dispatch(NavAction.menu.close())
-        : dispatch(NavAction.menu.open());
+      open={open}
+      onClick={(e) => {
+        if(typeof onClick === 'function') onClick(e);
       }}
     />
     <AlexisMarroquinLogo/>
-  </Grid>
+    <style jsx>{`
+      .nav {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 2rem;
+        border-bottom: 1px solid #eee;
+        box-shadow: 1px 1px 1px #eee;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 1000;
+      }
+    `}</style>
+  </div>
   )
 }

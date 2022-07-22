@@ -5,19 +5,21 @@ const contactLines = [
   {
     name: 'Email',
     href: `mailto:alexis.a.marroquin@gmail.com`,
+    handle: 'alexis.a.marroquin@gmail.com',
     target: '_blank',
     icon: email
   },
   {
     name: 'Github',
     href: `https://github.com/alexismarroquin7`,
+    handle: 'alexismarroquin7',
     target: '_blank',
     icon: github
   }
 ]; 
 
 export const contact = {
-  title: "Let's get in touch.",
+  title: "Contact",
   lines: createIds('line_id', contactLines, true),
   id: "contact"
 }

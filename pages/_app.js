@@ -1,48 +1,48 @@
-// components
-import { Grid } from '../components';
 
 // widgets
+import { useState } from 'react';
 import { Nav, MobileMenu } from '../widgets';
 
-// store
-import { Provider as ReduxProvider, useSelector } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
-import { rootReducer } from "../store";
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// styles
+import "../styles/globals.css";
 
-// hooks
-import { useDarkMode } from '../hooks/useDarkMode';
+const initialMenuOpen = false;
 
-// style
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyles, theme } from "../styles";
-import '../styles/globals.css'
-
-const middleware = applyMiddleware(thunk, logger);
-const store = createStore(
-  rootReducer,
-  middleware
-);
-
-function MyApp({ Component, pageProps }) {
-  const { darkMode } = useDarkMode(false);
+function MyApp({ Component, pageProps }) {  
   
+  const [menuOpen, setMenuOpen] = useState(initialMenuOpen);
+
   return (
-  <ReduxProvider store={store}>
-    <ThemeProvider theme={darkMode ? theme.dark : theme.light}>
-      <GlobalStyles />
-      <Grid
-        direction="column wrap"
-        alignItems="center"
-        position="relative"
-      >
-        <Nav />
-        <MobileMenu />
-        <Component {...pageProps} />
-      </Grid>
-    </ThemeProvider>
-  </ReduxProvider>
+  <div className="app">
+    
+    <Nav
+      open={menuOpen}
+      onClick={(e) => {
+        e.preventDefault();
+        setMenuOpen(!menuOpen);
+      }}
+    />
+    <MobileMenu 
+      open={menuOpen}
+      onClose={() => {
+        setMenuOpen(false);
+      }}
+      onClick={(e) => {
+        e.preventDefault();
+        setMenuOpen(!menuOpen);
+      }}
+    />
+    <Component {...pageProps} />
+  
+    <style jsx>{`
+      .app {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+      }
+    `}</style>
+  </div>
   )
 }
 
