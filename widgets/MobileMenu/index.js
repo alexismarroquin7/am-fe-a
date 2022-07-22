@@ -1,44 +1,5 @@
-// components
-import { useEffect, useState } from "react";
-
 // data
 import { routes } from "../../data";
-
-const coordinates = {
-  hidden: {
-    left: "-100%"
-  },
-  active: {
-    left: "0%"
-  }
-}
-
-// const StyledMobileMenu = styled.div`
-//   .MobileMenu__Wrapper {
-//     width: 100%
-//   }
-
-//   .MobileMenu__Wrapper__Text {
-//     flex-flow: column wrap;
-//     align-items: center;
-//     gap: 2rem;
-//   }
-  
-//   .MobileMenu__Wrapper__Text h6:hover {
-//     color: white;
-//   }
-  
-//   @media (min-width: 1025px){
-//     .MobileMenu__Wrapper {
-//       width: 10%;
-//       box-shadow: 0rem 0px 5px black;
-//     }
-    
-//     .MobileMenu__Wrapper__Text {
-//       align-items: flex-start;
-//     }
-//   }
-// `
 
 export const MobileMenu = ({open = false, onClose}) => {
 
@@ -109,6 +70,7 @@ export const MobileMenu = ({open = false, onClose}) => {
         width: 50%;
         background-color: transparent;
         color: red;
+        font-weight: bold;
       }
       
       .open {

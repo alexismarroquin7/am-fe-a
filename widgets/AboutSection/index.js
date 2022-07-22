@@ -6,50 +6,67 @@ import Image from "next/image";
 import { about } from "../../data";
 
 export const AboutSection = () => {
-  // const theme = useTheme();
+  
   return (
-  <section>
-    <section
-      // bgColor={theme.color.secondary.value}
-      id={about.id}
+  <section
+    className="about-section"
+    id={about.id}
+  >
+    
+    <h6>{about.title}</h6>
+        
+    <div
+      className="image-wrapper"
     >
       <div
-        className="AboutSection__Wrapper"
+        className="image-container"
       >
-        <div
-          width="100%"
-        >
-          <h6>{about.title}</h6>
-        </div>
-        
-        <div
-          // bgColor={theme.color.white}
-          
-        >
-          <Image 
-            src={about.image.src}
-            alt={about.image.alt}
-            width={about.image.width}
-            height={about.image.height}
-          />
-        </div>
-
-        <div
-          
-        >
-          {about.description.map((paragraph, i, arr) => (
-            <p
-              key={paragraph.id}
-              style={{
-                // // color: i === arr.length - 1 ? theme.color.white : theme.color.black,
-                width: "100%"
-              }}
-            >{paragraph.text}</p>
-          ))}
-        </div>
-        
+        <Image 
+          src={about.image.src}
+          alt={about.image.alt}
+          width={about.image.width}
+          height={about.image.height}
+        />
       </div>
-    </section>
+    </div>
+
+    <div
+      className="about-description"
+    >
+      {about.description.map((paragraph, i, arr) => (
+        <p
+          key={paragraph.id}
+        >{paragraph.text}</p>
+      ))}
+    </div>
+
+    <style jsx>{`
+      .about-section {
+        padding: 2rem;
+        display: flex;
+        flex-flow: column wrap;
+        gap: 2rem;
+      }
+
+      .image-wrapper {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+      }
+
+      .image-container {
+        border-radius: 100%;
+        overflow: hidden;
+      }
+
+      .about-description {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 1rem;
+      }
+    `}</style>
+
   </section>
   )
 };
