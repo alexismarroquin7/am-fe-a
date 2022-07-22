@@ -10,7 +10,7 @@ const buttons = [
   {
     text: 'About',
     href: '#about',
-    variant: 'filled'
+    variant: 'contained'
   },
   {
     text: 'Contact',
