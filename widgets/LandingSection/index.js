@@ -12,16 +12,12 @@ export const LandingSection = () => {
   const router = useRouter();
 
   return (
-  <div
+  <section
     className="landing-section"
     id={home.id}
   >
     <p>{home.titleIntro}</p>
-    <h4
-      style={{
-        color: '#5599f2'
-      }}
-    >{home.title}</h4>
+    <h4 className="landing-section-title">{home.title}</h4>
     <h4>{home.subTitle}</h4>
   
     <div
@@ -59,6 +55,10 @@ export const LandingSection = () => {
         flex-flow: column wrap;
         gap: 1rem;
       }
+
+      .landing-section-title {
+        color: #5599f2;
+      }
       
       .image-wrapper {
         width: 100%;
@@ -75,21 +75,21 @@ export const LandingSection = () => {
 
       button {
         padding: 1rem;
-        border: 1px solid black;
+        border: 1px solid var(--blue);
+        color: var(--blue);
         border-radius: 2rem;
       }
 
       .outlined {
         background-color: transparent;
-        color: black;
       }
       
       .contained {
-        background-color: black;
+        background-color: var(--blue);
         color: white;
       }
     `}</style>
-  </div>
+  </section>
   
   )
 }

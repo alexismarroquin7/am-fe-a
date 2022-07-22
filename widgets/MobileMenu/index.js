@@ -69,7 +69,7 @@ export const MobileMenu = ({open = false, onClose}) => {
         padding: 2rem;
         width: 50%;
         background-color: transparent;
-        color: red;
+        color: var(--blue);
         font-weight: bold;
       }
       

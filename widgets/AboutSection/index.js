@@ -1,4 +1,3 @@
-
 // components
 import Image from "next/image";
 
@@ -42,7 +41,8 @@ export const AboutSection = () => {
 
     <style jsx>{`
       .about-section {
-        padding: 2rem;
+        width: 100%;
+        padding: 4rem 2rem;
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
@@ -63,7 +63,7 @@ export const AboutSection = () => {
       .about-description {
         display: flex;
         flex-flow: column wrap;
-        gap: 1rem;
+        gap: 2rem;
       }
     `}</style>
 

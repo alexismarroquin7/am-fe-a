@@ -2,19 +2,11 @@
 import { skills } from "../../data";
 
 // components
-import { Border, div, Section } from "../../components";
 import Image from "next/image";
-
-// styles
-import { useTheme } from "styled-components";
-import styled from "styled-components";
-
-// utils
-import { isEven, isOdd } from "../../utils";
 
 export const SkillsSection = () => {
   return (
-  <div
+  <section
     id={skills.id}
     className="skills-section"
   >
@@ -55,11 +47,13 @@ export const SkillsSection = () => {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        gap: 1rem;
+        background-color: var(--blue);
       }
 
       .skills-title {
-        width: 90%;
+        width: 100%;
+        padding: 2rem;
+        color: white;
       }
 
       .skill-list {
@@ -69,20 +63,29 @@ export const SkillsSection = () => {
       }
       
       .skill-item {
+        width: 100%;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        gap: 1rem;
-        padding: 4rem 2rem;
+        gap: 4rem;
+        padding: 10rem 2rem;
+      }
+      
+      .skill-item:nth-child(odd){
+        color: white;
+      }
+
+      .skill-item:nth-child(even){
+        background-color: white;
       }
             
       .skill-item-text-wrapper {
         display: flex;
         flex-flow: column wrap;
-        gap: 1rem;
+        gap: 2rem;
       }
 
     `}</style> 
-  </div>
+  </section>
   )
 }

@@ -1,10 +1,4 @@
-import { useState } from "react";
 import { AlexisMarroquinLogo, MenuIcon } from "../../components";
-
-const navTopValues = {
-  active: "0rem",
-  hidden: "-8rem"
-}
 
 export const Nav = ({open, onClick}) => {
   return (

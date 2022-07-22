@@ -11,7 +11,7 @@ export const ContactSection = () => {
     className="contact-section"
     id={contact.id}
   >
-    <p style={{fontWeight: "bold"}}>{contact.title}</p>      
+    <p className="contact-section-title">{contact.title}</p>      
 
     <div
       className="contact-list"
@@ -39,10 +39,17 @@ export const ContactSection = () => {
 
     <style jsx>{`
       .contact-section {
-        padding: 2rem;
+        width: 100%;
+        padding: 4rem 2rem;
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
+      }
+
+      .contact-section-title {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
       }
       
       .contact-list {
