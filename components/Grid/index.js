@@ -29,6 +29,7 @@ const StyledGrid = styled.div`
 
   transition: ${({transition}) => transition ? transition : 'none'};
   overflow: ${({overflow}) => overflow ? overflow : 'visible'};
+  background-image: ${({bgImage}) => bgImage ? bgImage : 'none'};
 `
 
 export const Grid = (props) => {

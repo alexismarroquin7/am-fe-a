@@ -25,6 +25,12 @@ h6 {
   font-size: 2.4rem;
 }
 
-p, a, span {
+select,
+input,
+button,
+option,
+p,
+a,
+span {
   font-size: 2rem;
 }

@@ -1,53 +1,30 @@
-// hooks
-import { useTheme } from "styled-components";
 
 // components
-import { Section, Grid } from "../../components";
 import Image from "next/image";
 
 // data
 import { about } from "../../data";
 
-import styled from "styled-components";
-
-const StyledAboutSection = styled.div`
-
-  .AboutSection__Wrapper {
-    width: 90%;
-    flex-flow: column wrap;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 1025px) {
-    .AboutSection__Wrapper {
-      width: 50%;
-    }
-  }
-
-`
-
 export const AboutSection = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   return (
-  <StyledAboutSection>
-    <Section
-      bgColor={theme.color.secondary.value}
+  <section>
+    <section
+      // bgColor={theme.color.secondary.value}
       id={about.id}
     >
-      <Grid
+      <div
         className="AboutSection__Wrapper"
       >
-        <Grid
+        <div
           width="100%"
         >
           <h6>{about.title}</h6>
-        </Grid>
+        </div>
         
-        <Grid
-          bgColor={theme.color.white}
-          borderRadius={about.image.borderRadius}
-          overflow="hidden"
+        <div
+          // bgColor={theme.color.white}
+          
         >
           <Image 
             src={about.image.src}
@@ -55,25 +32,24 @@ export const AboutSection = () => {
             width={about.image.width}
             height={about.image.height}
           />
-        </Grid>
+        </div>
 
-        <Grid
-          width="100%"
-          gap="2rem"
+        <div
+          
         >
           {about.description.map((paragraph, i, arr) => (
             <p
               key={paragraph.id}
               style={{
-                color: i === arr.length - 1 ? theme.color.white : theme.color.black,
+                // // color: i === arr.length - 1 ? theme.color.white : theme.color.black,
                 width: "100%"
               }}
             >{paragraph.text}</p>
           ))}
-        </Grid>
+        </div>
         
-      </Grid>
-    </Section>
-  </StyledAboutSection>
+      </div>
+    </section>
+  </section>
   )
 };

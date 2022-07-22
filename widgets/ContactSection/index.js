@@ -2,38 +2,29 @@
 import { contact } from "../../data";
 
 // components
-import { Section, Grid } from "../../components";
 import Image from 'next/image';
 
-// style
-import { useTheme } from "styled-components";
-
 export const ContactSection = () => {
-  
-  const theme = useTheme();
 
   return (
-  <Section
-    bgColor={theme.color.secondary.value}
+  <section
+    // bgColor={theme.color.secondary.value}
     id={contact.id}
   >
 
-    <Grid
-      width="90%"
-      direction="column wrap"
-      alignItems="center"
-      gap={theme.gap.secondary}
+    <div
+      
     >
       
       <p style={{fontWeight: "bold"}}>{contact.title}</p>
       
 
-      <Grid
-        alignItems="center"
-        gap={theme.gap.secondary}
+      <div
+      
+        // gap={theme.gap.secondary}
       >
         {contact.lines.map(line => (
-          <Grid
+          <div
             key={line.line_id}
           >
             <a 
@@ -48,12 +39,12 @@ export const ContactSection = () => {
                 alt={line.icon.alt}
               />
             </a>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
 
-    </Grid>  
+    </div>  
   
-  </Section>
+  </section>
   )
 }

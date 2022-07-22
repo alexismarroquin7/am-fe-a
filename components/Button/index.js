@@ -2,38 +2,39 @@ import styled from "styled-components"
 
 const StyledButton = styled.button`
   width: ${({width}) => width ? width : 'auto'};
+  
   background-color: ${({bgColor, variant, theme}) => {
-    let bgColorToUse; 
-    
+    let bgColorToUse = '';
+  
     if(bgColor){
       bgColorToUse = bgColor;
       
     } else if(variant === 'outlined'){
-      bgColorToUse = theme.color.secondary.value;
+      bgColorToUse = 'rgba( 255, 255, 255, 0 )'; 
       
     } else if (variant === 'filled'){
       bgColorToUse = theme.color.white;
-      
-    } else {
-      bgColorToUse = theme.color.white;
-
+    
+    } else if (variant === 'text'){
+      bgColorToUse = 'transparent';
     }
 
     return bgColorToUse;
   }};
+
   color: ${({color, variant, theme}) => {
     let colorToUse;
 
     if(color){
       colorToUse = color;
+    
     } else if(variant) {
       if(variant === 'outlined'){
-        colorToUse = theme.color.white;
+        colorToUse = theme.color.black;
 
+      } else if(variant === 'filled'){
+        colorToUse = theme.color.black;
       }
-
-    } else {
-      colorToUse = theme.color.black;
 
     }
     
@@ -48,21 +49,23 @@ const StyledButton = styled.button`
         
       } else {
         borderToUse = `1px solid red`;
-
       }
     
     } else if(variant === 'outlined'){
-      borderToUse = '.2rem solid white';
-
-    } else {
-      borderToUse = '0';
+      borderToUse = '.2rem solid black';
       
+    } else if (variant === 'filled') {
+      borderToUse = '.2rem solid white';
+    } else if (variant === 'text') {
+      borderToUse = '0';
     }
 
     return borderToUse;
   }};
-  border-radius: ${({borderRadius, theme}) => borderRadius ? borderRadius : theme.borderRadius.primary};
-  padding: ${({padding, theme}) => padding ? padding : theme.padding.primary};
+
+  border-radius: ${({borderRadius}) => borderRadius ? borderRadius : '25px'};
+  padding: ${({padding}) => padding ? padding : '1rem 2rem'};
+  font-weight: bold;
 `
 
 export const Button = (props) => {

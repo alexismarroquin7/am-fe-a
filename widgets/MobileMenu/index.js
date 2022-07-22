@@ -1,15 +1,8 @@
 // components
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useTheme } from "styled-components";
-import { Grid, Section } from "../../components";
-
-// store
-import { NavAction } from "../../store";
 
 // data
 import { routes } from "../../data";
-import styled from "styled-components";
 
 const coordinates = {
   hidden: {
@@ -20,89 +13,111 @@ const coordinates = {
   }
 }
 
-const StyledMobileMenu = styled.div`
-  .MobileMenu__Wrapper {
-    width: 100%
-  }
+// const StyledMobileMenu = styled.div`
+//   .MobileMenu__Wrapper {
+//     width: 100%
+//   }
 
-  .MobileMenu__Wrapper__Text {
-    flex-flow: column wrap;
-    align-items: center;
-    gap: 2rem;
-  }
+//   .MobileMenu__Wrapper__Text {
+//     flex-flow: column wrap;
+//     align-items: center;
+//     gap: 2rem;
+//   }
   
-  .MobileMenu__Wrapper__Text h6:hover {
-    color: white;
-  }
+//   .MobileMenu__Wrapper__Text h6:hover {
+//     color: white;
+//   }
   
-  @media (min-width: 1025px){
-    .MobileMenu__Wrapper {
-      width: 10%;
-      box-shadow: 0rem 0px 5px black;
-    }
+//   @media (min-width: 1025px){
+//     .MobileMenu__Wrapper {
+//       width: 10%;
+//       box-shadow: 0rem 0px 5px black;
+//     }
     
-    .MobileMenu__Wrapper__Text {
-      align-items: flex-start;
-    }
-  }
-`
+//     .MobileMenu__Wrapper__Text {
+//       align-items: flex-start;
+//     }
+//   }
+// `
 
-export const MobileMenu = () => {
-  
-  const [coor, setCoor] = useState(coordinates.hidden);
-
-  const nav = useSelector(s => s.nav);
-
-  const dispatch = useDispatch();
-
-  const theme = useTheme();
-
-  useEffect(() => {
-    if(nav.menu.open){
-      setCoor(coordinates.active);
-    } else {
-      setCoor(coordinates.hidden);
-    }
-  }, [nav.menu.open]);
+export const MobileMenu = ({open = false, onClose}) => {
 
   return (
-  <StyledMobileMenu
-    
+  <div
+    className={`mobile-menu ${open ? 'open' : ''}`}
+    onClick={(e) => {
+      e.preventDefault();
+      if(typeof onClose === 'function') onClose();
+    }}
   >
-    <Section
-      className="MobileMenu__Wrapper"
-      position="fixed"
-      zIndex="999"
-      top="0"
-      left={coor.left}
-      transition={theme.transition.primary}
-      height="100vh"
-      bgColor={theme.color.secondary.value}
+    <section 
+      className="mobile-menu-content" 
     >
-      <Grid
-        className="MobileMenu__Wrapper__Text"
-        
-      >
-        {routes.map(route => (
-          <h6
-            key={route.route_id}
-            onClick={() => {
-              dispatch(NavAction.menu.close());
-              const element = document
-              .querySelector(route.href)
-              
-              element
-              .scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-              });
-            }}
-          >{route.name}</h6>
-        ))}
-      </Grid>
+      {routes.map(route => (
+        <button
+          className="link-button"
+          key={route.route_id}
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
 
-    </Section>
-  </StyledMobileMenu>
+            const element = document
+            .querySelector(route.href)
+            
+            element
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest"
+            });
+
+            if(typeof onClose === 'function') onClose();
+
+          }}
+        >{route.name}</button>
+        
+      ))}
+    </section>
+    
+    <style jsx>{`
+      .mobile-menu {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: saturate(180%) blur(10px);
+        z-index: 999;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        transition: all .2s;
+      }
+      
+      .mobile-menu-content {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+      }
+
+      .link-button {
+        border: 0;
+        padding: 2rem;
+        width: 50%;
+        background-color: transparent;
+        color: red;
+      }
+      
+      .open {
+        display: flex;
+        left: 0%;
+      }
+
+    `}</style>
+
+  </div>
   );
 }

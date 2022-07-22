@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
   justify-content: center;
 
   padding: ${({padding}) => padding ? padding : '4rem 0'};
-  background-color: ${({bgColor, theme}) => bgColor ? bgColor : theme.color.white};
+  background-color: ${({bgColor}) => bgColor ? bgColor : ''};
   color: ${({color, theme}) => color ? color : theme.color.black};
   
 `;

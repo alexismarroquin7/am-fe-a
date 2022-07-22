@@ -1,5 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-
 const sharedColor = {
   white: "#fff",
   black: "#000"
@@ -58,7 +56,3 @@ export const theme = {
   light,
   dark
 }
-
-export const GlobalStyles = createGlobalStyle`
-  /* add global styles here */
-`

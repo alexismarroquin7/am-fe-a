@@ -27,8 +27,8 @@ export const home = {
   description: descriptionText,
   headshot: {
     ...headshot,
-    width: '200px',
-    height: '200px',
+    width: '175px',
+    height: '175px',
     borderRadius: '50%',
     border: '.5rem solid #fff'
   },
