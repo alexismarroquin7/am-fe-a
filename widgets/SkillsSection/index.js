@@ -23,20 +23,24 @@ export const SkillsSection = () => {
           key={skill.skill_id}      
           className="skill-item"
         >
-          <Image
-            src={skill.icon.src}
-            width="50px"
-            height="50px"
-            alt={skill.icon.alt}
-          />
-          
           <div
-            className="skill-item-text-wrapper"
+            className="skill-item-glass"
           >
-            <h6>{skill.name}</h6>
-            <p>{skill.description}</p>
-          </div>
+            <Image
+              src={skill.icon.src}
+              width="50px"
+              height="50px"
+              alt={skill.icon.alt}
+            />
+            
+            <div
+              className="skill-item-text-wrapper"
+            >
+              <h6>{skill.name}</h6>
+              <p>{skill.description}</p>
+            </div>
 
+          </div>
         </div>
       ))}       
     </div>
@@ -47,19 +51,21 @@ export const SkillsSection = () => {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        background-color: var(--light-blue);
+        background-color: var(--sky-blue);
+        color: var(--blue);
+        gap: 1rem;
+        padding: 4rem 0;
       }
 
       .skills-title {
-        width: 100%;
-        padding: 2rem;
-        color: white;
+        width: 90%;
       }
 
       .skill-list {
         width: 100%;
         display: flex;
         flex-flow: column wrap;
+        align-items: center;
       }
       
       .skill-item {
@@ -68,15 +74,24 @@ export const SkillsSection = () => {
         flex-flow: column wrap;
         align-items: center;
         gap: 4rem;
-        padding: 10rem 2rem;
-      }
-      
-      .skill-item:nth-child(odd){
-        color: white;
+        padding: 2rem 0;
+        border-radius: 1rem;
       }
 
-      .skill-item:nth-child(even){
-        background-color: white;
+      .skill-item p {
+        color: var(--black);
+      }
+      
+      .skill-item-glass {
+        width: 90%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 4rem;
+        padding: 10rem 2rem;
+        background-color: rgba(255, 255, 255, .75);  
+        backdrop-filter: blur(5px);
+        border-radius: 1rem;
       }
             
       .skill-item-text-wrapper {

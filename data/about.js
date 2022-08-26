@@ -8,25 +8,12 @@ export const about = {
   description: [
     {
       id: uuidv4(),
-      text: `I am a full-stack web developer based in the Bay Area.`
-    },
-    {
-      id: uuidv4(),
-      text: `I build front-end web apps using modern JavaScript frameworks like React.js and Next.js.`
-    },
-    {
-      id: uuidv4(),
-      text: `I also make APIs with Express.js and postgreSQL.`
-    },
-    {
-      id: uuidv4(),
-      text: `Let's build something awesome.`
+      text: `I am a developer based in the Bay Area. I make websites and full-stack web applications.`
     }
   ],
   image: {
     ...profilePicture,
-    width: "175px",
-    height: "175px",
+    width: "150px",
     borderRadius: "50%"
   }
 }

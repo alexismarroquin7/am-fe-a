@@ -17,7 +17,6 @@ export default function Home() {
     <LandingSection/>
     <SkillsSection/>
     <AboutSection/>
-    <div className="divider"></div>
     <ContactSection/>
     <FooterSection/>
 

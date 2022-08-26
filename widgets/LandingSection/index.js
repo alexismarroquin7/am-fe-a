@@ -1,15 +1,30 @@
-// router
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-
 // data
 import { home } from "../../data";
 
 import Typical from "react-typical";
 
 export const LandingSection = () => {
+  const handlePointerDown = button => {
+    const element = document.querySelector(button.href)
+    element.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
   
-  const router = useRouter();
+  const handlePointerHover = e => {
+    const containerVariant = Array.from(e.target.classList).includes('contained');
+    const outlinedVariant = Array.from(e.target.classList).includes('outlined');
+    
+    if(containerVariant){
+      e.target.classList.remove('contained');
+      e.target.classList.add('outlined');
+
+    } else if(outlinedVariant){
+      e.target.classList.remove('outlined');
+      e.target.classList.add('contained');
+    }
+
+  };
 
   return (
   <section
@@ -45,11 +60,14 @@ export const LandingSection = () => {
         {home.buttons.map(button => (
           <button
             key={button.button_id}
-            onClick={(e) => {
+            onPointerDown={(e) => {
               e.preventDefault();
-              router.push(button.href);
+              e.stopPropagation();
+              handlePointerDown(button);
             }}
             className={button.variant}
+            onPointerEnter={handlePointerHover}
+            onPointerLeave={handlePointerHover}
           >{button.text}</button>
         ))}
       </div>
@@ -58,8 +76,7 @@ export const LandingSection = () => {
     <style jsx>{`
       .landing-section {
         width: 100%;
-        height: 75vh;
-        padding: 2rem 1rem;
+        padding: 8rem 0;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -67,12 +84,10 @@ export const LandingSection = () => {
       }
       
       .landing-section-glass {
-        width: 100%;
-        height: 100%;
+        width: 90%;
         padding: 2rem;
         display: flex;
         flex-flow: column wrap;
-        justify-content: space-between;
         gap: 2rem;
         background-color: rgba(255, 255, 255, .75);  
         backdrop-filter: blur(5px);
@@ -82,13 +97,13 @@ export const LandingSection = () => {
       .landing-section-main-text {
         display: flex;
         flex-flow: column wrap;
-        color: var(--black);
+        color: var(--blue);
+        padding: 2rem 0;
       }
       
-      .landing-section-main-text:last-child {
-        background-color: var(--light-blue);
-        border-radius: 1rem;
-        border: .2rem solid var(--light-blue);
+      .landing-section-title,
+      .landing-section-sub-title {
+        color: var(--black);
       }
       
       .landing-section-button-container {
@@ -99,10 +114,11 @@ export const LandingSection = () => {
 
       button {
         padding: 1rem;
-        border: .2rem solid var(--light-blue);
-        color: var(--light-blue);
+        border: .2rem solid var(--blue);
+        color: var(--blue);
         border-radius: 1rem;
         font-weight: bold;
+        transition: all .2s;
       }
 
       .outlined {
@@ -110,7 +126,7 @@ export const LandingSection = () => {
       }
       
       .contained {
-        background-color: var(--light-blue);
+        background-color: var(--blue);
         color: white;
       }
 
