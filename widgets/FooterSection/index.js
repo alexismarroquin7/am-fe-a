@@ -19,7 +19,7 @@ export const FooterSection = () => {
         flex-flow: column wrap;
         align-items: center;
         gap: 2rem;
-        background-color: var(--blue);
+        background-color: var(--light-blue);
       }
 
       .middle-text {

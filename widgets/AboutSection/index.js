@@ -21,7 +21,7 @@ export const AboutSection = () => {
         className="image-container"
       >
         <Image 
-          src={about.image.src}
+          src={about.image.src} 
           alt={about.image.alt}
           width={about.image.width}
           height={about.image.height}

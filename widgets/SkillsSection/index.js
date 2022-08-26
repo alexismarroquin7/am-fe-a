@@ -47,7 +47,7 @@ export const SkillsSection = () => {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        background-color: var(--blue);
+        background-color: var(--light-blue);
       }
 
       .skills-title {

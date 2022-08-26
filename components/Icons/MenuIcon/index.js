@@ -17,6 +17,7 @@ export const MenuIcon = ({onClick, open}) => {
           border: 0;
           justify-content: space-between;
           background-color: transparent;
+          gap: .2rem;
         }
         
         .top,

@@ -1,2 +1,1 @@
-export * from "./ar-emoji-wave"
-export * from "./headshot"
+export * from "./profile-picture"
