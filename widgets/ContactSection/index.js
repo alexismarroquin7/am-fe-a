@@ -11,7 +11,7 @@ export const ContactSection = () => {
     className="contact-section"
     id={contact.id}
   >
-    <p className="contact-section-title">{contact.title}</p>      
+    <h6 className="contact-section-title">{contact.title}</h6>      
 
     <div
       className="contact-list"
@@ -19,6 +19,7 @@ export const ContactSection = () => {
       {contact.lines.map(line => (
         <div
           key={line.line_id}
+          className="contact-item"
         >
           <a 
             title={line.name}
@@ -31,7 +32,6 @@ export const ContactSection = () => {
               height="50px"
               alt={line.icon.alt}
             />
-            {line.handle}
           </a>
         </div>
       ))}
@@ -43,11 +43,12 @@ export const ContactSection = () => {
         padding: 4rem 2rem;
         display: flex;
         flex-flow: column wrap;
-        gap: 2rem;
+        gap: 4rem;
+        background-color: var(--sky-blue);
+        color: var(--blue);
       }
 
       .contact-section-title {
-        font-weight: bold;
         width: 100%;
         text-align: center;
       }
@@ -60,12 +61,19 @@ export const ContactSection = () => {
         gap: 25%;
       }
 
+      .contact-item {
+        background-color: rgba(255, 255, 255, .75);  
+        backdrop-filter: blur(5px);
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+
       a {
         font-size: 1rem;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        color: black;
+        color: var(--blue);
       }
     `}</style>
   </section>

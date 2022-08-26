@@ -5,3 +5,4 @@ export * from "./LandingSection";
 export * from "./MobileMenu";
 export * from "./Nav";
 export * from "./SkillsSection";
+export * from "./SplashSection";

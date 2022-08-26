@@ -1,10 +1,9 @@
 import { createIds } from "../utils";
-import { headshot } from ".";
 
 const titleIntroText = `Hello, my name is`;
 const titleText = `Alexis Marroquin.`;
 const subTitleText = `I build web apps.`;
-const descriptionText = `I am passionate about creating digital solutions for people and businesses.`;
+const descriptionText = `I am create digital solutions for people and businesses.`;
 
 const buttons = [
   {
@@ -25,12 +24,13 @@ export const home = {
   title: titleText,
   subTitle: subTitleText,
   description: descriptionText,
-  headshot: {
-    ...headshot,
-    width: '175px',
-    height: '175px',
-    borderRadius: '50%',
-    border: '.5rem solid #fff'
-  },
+  steps: [
+    'developer.',
+    1000,
+    'web designer.',
+    1000,
+    'problem solver.',
+    1000,
+  ],
   buttons: createIds('button_id', buttons, true)
 }

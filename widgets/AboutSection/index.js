@@ -11,41 +11,64 @@ export const AboutSection = () => {
     className="about-section"
     id={about.id}
   >
-    
-    <h6>{about.title}</h6>
-        
-    <div
-      className="image-wrapper"
-    >
-      <div
-        className="image-container"
-      >
-        <Image 
-          src={about.image.src}
-          alt={about.image.alt}
-          width={about.image.width}
-          height={about.image.height}
-        />
-      </div>
-    </div>
+    <h6
+      className="about-title"
+    >{about.title}</h6>
 
     <div
-      className="about-description"
+      className="about-section-glass"
     >
-      {about.description.map((paragraph, i, arr) => (
-        <p
-          key={paragraph.id}
-        >{paragraph.text}</p>
-      ))}
+          
+      <div
+        className="image-wrapper"
+      >
+        <div
+          className="image-container"
+        >
+          <Image 
+            src={about.image.src} 
+            alt={about.image.alt}
+            width={about.image.width}
+            height={about.image.width}
+          />
+        </div>
+      </div>
+
+      <div
+        className="about-description"
+      >
+        {about.description.map((paragraph, i, arr) => (
+          <p
+            key={paragraph.id}
+          >{paragraph.text}</p>
+        ))}
+      </div>
     </div>
 
     <style jsx>{`
       .about-section {
         width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--sky-blue);
+        color: var(--blue);
+      }
+      
+      .about-section-glass {
+        width: 90%;
         padding: 4rem 2rem;
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
+        background-color: rgba(255, 255, 255, .75);  
+        backdrop-filter: blur(5px);
+        border-radius: 1rem;
+      }
+
+      .about-title {
+        width: 90%;
       }
 
       .image-wrapper {
@@ -64,6 +87,7 @@ export const AboutSection = () => {
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
+        color: var(--black);
       }
     `}</style>
 

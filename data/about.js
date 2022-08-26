@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { arEmojiWave } from "./images";
+import { profilePicture } from "./images";
 
 
 export const about = {
@@ -8,29 +8,12 @@ export const about = {
   description: [
     {
       id: uuidv4(),
-      text: `I am a full-stack developer based in the Bay Area and am passionate for writing code that comes to life.`
-    },
-    {
-      id: uuidv4(),
-      text: `Self-motivated, problem solver with an appetite for knowledge.`
-    },
-    {
-      id: uuidv4(),
-      text: `My interests include technology, language learning, travel, culinary arts, filmmaking, latin music, and podcasts.`
-    },
-    {
-      id: uuidv4(),
-      text: `Open to take on more ambitious projects.`
-    },
-    {
-      id: uuidv4(),
-      text: `Let's build something awesome.`
+      text: `I am a developer based in the Bay Area. I make websites and full-stack web applications.`
     }
   ],
   image: {
-    ...arEmojiWave,
-    width: "175px",
-    height: "175px",
+    ...profilePicture,
+    width: "150px",
     borderRadius: "50%"
   }
 }

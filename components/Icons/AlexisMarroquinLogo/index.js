@@ -1,34 +1,3 @@
-
-
-// const StyledAlexisMarroquinLogo = styled.div`
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: center;
-//   align-items: center;
-  
-//   h5 {
-//     display: flex;
-//     flex-flow: row wrap;
-//     justify-content: center;
-//     align-items: center;
-//     color: ${({ theme }) => theme.color.terciary.value};
-//   }
-
-//   span {
-//     font-size: 2.4rem;
-//   }
-
-//   span:nth-child(1){
-//     color: ${({ theme }) => theme.color.black};
-//     padding: 0 .5rem;
-//   }
-  
-//   span:nth-child(2){
-//     color: ${({ theme }) => theme.color.secondary.value};
-//   }
-
-// `
-
 export const AlexisMarroquinLogo = () => {
   return (
   <span
@@ -45,15 +14,15 @@ export const AlexisMarroquinLogo = () => {
 
     <style jsx>{`
       .wrapper {
-        color: red;
+        color: var(--blue);
       }
 
       .name {
-        color: black;
+        color: var(--black);
       }
       
       .slash {
-        color: blue;
+        color: var(--sky-blue);
       }
     `}</style>
   </span>

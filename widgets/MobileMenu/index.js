@@ -21,6 +21,12 @@ export const MobileMenu = ({open = false, onClose}) => {
           onClick={(e) => {
             e.stopPropagation();
             e.preventDefault();
+            
+            if(route.href === '/') {
+              location = '/';
+              return;
+            }
+
 
             const element = document
             .querySelector(route.href)
@@ -47,8 +53,8 @@ export const MobileMenu = ({open = false, onClose}) => {
         position: fixed;
         top: 0;
         left: -100%;
-        background: rgba(0,0,0,0.8);
-        backdrop-filter: saturate(180%) blur(10px);
+        background-color: rgba(255, 255, 255, .75);  
+        backdrop-filter: blur(5px);
         z-index: 999;
         flex-flow: column wrap;
         align-items: center;
