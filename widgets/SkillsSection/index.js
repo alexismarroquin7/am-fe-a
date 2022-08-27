@@ -26,13 +26,17 @@ export const SkillsSection = () => {
           <div
             className="skill-item-glass"
           >
-            <Image
-              src={skill.icon.src}
-              width="50px"
-              height="50px"
-              alt={skill.icon.alt}
-            />
-            
+            <div
+              className="skill-item-image-container"
+            >
+              <Image
+                src={skill.icon.src}
+                width="50px"
+                height="50px"
+                alt={skill.icon.alt}
+              />
+            </div>
+
             <div
               className="skill-item-text-wrapper"
             >
@@ -88,7 +92,7 @@ export const SkillsSection = () => {
         flex-flow: column wrap;
         align-items: center;
         gap: 4rem;
-        padding: 10rem 2rem;
+        padding: 4rem 2rem;
         background-color: rgba(255, 255, 255, .75);  
         backdrop-filter: blur(5px);
         border-radius: 1rem;
@@ -98,6 +102,36 @@ export const SkillsSection = () => {
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
+      }
+
+
+      @media (min-width: 600px) {
+        
+        .skills-title {
+          width: 70%;
+        }
+
+        .skill-item-glass {
+          width: 70%;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          gap: 0;
+        }
+
+        .skill-item:nth-child(even) .skill-item-glass {
+          flex-flow: row-reverse wrap;
+        }
+
+        .skill-item-text-wrapper {
+          width: 50%;
+        }
+
+        .skill-item-image-container {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+        }
+      }
       }
 
     `}</style> 

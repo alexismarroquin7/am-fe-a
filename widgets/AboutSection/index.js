@@ -89,6 +89,32 @@ export const AboutSection = () => {
         gap: 2rem;
         color: var(--black);
       }
+
+      @media (min-width: 600px) {
+        .about-section-glass {
+          width: 70%;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0;
+        }
+        
+        .image-wrapper {
+          width: 50%;
+          display: flex;
+          flex-flow: column wrap;
+          align-items: center;          
+        }
+
+        .about-title {
+          width: 70%;
+        }
+
+        .about-description {
+          width: 50%;
+        }
+
+      }
     `}</style>
 
   </section>
