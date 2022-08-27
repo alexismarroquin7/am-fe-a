@@ -22,6 +22,7 @@ export default function Home() {
 
     <style jsx>{`
       .home {
+        width: 100%;
         display: flex;
         flex-flow: column wrap;
         align-items: center;

@@ -113,7 +113,7 @@ export const LandingSection = () => {
       }
 
       button {
-        padding: 1rem;
+        padding: 1rem 2rem;
         border: .2rem solid var(--blue);
         color: var(--blue);
         border-radius: 1rem;
@@ -128,6 +128,17 @@ export const LandingSection = () => {
       .contained {
         background-color: var(--blue);
         color: white;
+      }
+
+      @media (min-width: 600px){
+        .landing-section-glass {
+          width: 70%;
+        }
+
+        .landing-section-button-container { 
+          flex-flow: row wrap;
+        }
+
       }
 
     `}</style>

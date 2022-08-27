@@ -26,11 +26,11 @@ export const home = {
   description: descriptionText,
   steps: [
     'developer.',
-    1000,
+    1500,
     'web designer.',
-    1000,
+    1500,
     'problem solver.',
-    1000,
+    1500,
   ],
   buttons: createIds('button_id', buttons, true)
 }
