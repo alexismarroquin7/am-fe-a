@@ -5,3 +5,4 @@ export * from "./footer";
 export * from "./home";
 export * from "./routes";
 export * from "./skills";
+export * from "./projects";

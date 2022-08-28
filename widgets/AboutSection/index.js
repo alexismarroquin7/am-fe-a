@@ -90,7 +90,7 @@ export const AboutSection = () => {
         color: var(--black);
       }
 
-      @media (min-width: 600px) {
+      /* @media (min-width: 600px) {
         .about-section-glass {
           width: 70%;
           flex-flow: row wrap;
@@ -114,7 +114,7 @@ export const AboutSection = () => {
           width: 50%;
         }
 
-      }
+      } */
     `}</style>
 
   </section>

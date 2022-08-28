@@ -2,7 +2,7 @@
 import Head from 'next/head';
 
 // widgets
-import { LandingSection, ContactSection, SkillsSection, AboutSection, FooterSection } from "../widgets";
+import { LandingSection, ContactSection, SkillsSection, ProjectsSection, AboutSection, FooterSection } from "../widgets";
 
 export default function Home() {
   
@@ -16,6 +16,7 @@ export default function Home() {
     
     <LandingSection/>
     <SkillsSection/>
+    <ProjectsSection/>
     <AboutSection/>
     <ContactSection/>
     <FooterSection/>

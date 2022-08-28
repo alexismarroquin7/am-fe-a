@@ -6,3 +6,4 @@ export * from "./MobileMenu";
 export * from "./Nav";
 export * from "./SkillsSection";
 export * from "./SplashSection";
+export * from "./ProjectsSection";
