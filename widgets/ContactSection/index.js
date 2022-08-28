@@ -4,6 +4,8 @@ import { contact } from "../../data";
 // components
 import Image from 'next/image';
 
+// const ContactIcon = (type)
+
 export const ContactSection = () => {
 
   return (
@@ -17,23 +19,20 @@ export const ContactSection = () => {
       className="contact-list"
     >
       {contact.lines.map(line => (
-        <div
-          key={line.line_id}
-          className="contact-item"
-        >
+        
           <a 
+            className="contact-item"
+            key={line.line_id}
             title={line.name}
             href={line.href}
             target={line.target}
           >
-            <Image
-              src={line.icon.src}
-              width="50px"
-              height="50px"
-              alt={line.icon.alt}
-            />
+            <div
+              className="contact-icon"
+            >
+              {line.icon()}
+            </div>
           </a>
-        </div>
       ))}
     </div>
 
@@ -57,8 +56,8 @@ export const ContactSection = () => {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
-        gap: 25%;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .contact-item {
@@ -68,13 +67,20 @@ export const ContactSection = () => {
         padding: 1rem;
       }
 
-      a {
+      .contact-icon {
+        font-size: 4rem;
+        /* color: var(--black); */
+        color: var(--blue);
+
+      }
+
+      /* a {
         font-size: 1rem;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
         color: var(--blue);
-      }
+      } */
     `}</style>
   </section>
   )

@@ -130,7 +130,7 @@ export const LandingSection = () => {
         color: white;
       }
 
-      @media (min-width: 600px){
+      /* @media (min-width: 600px){
         .landing-section-glass {
           width: 70%;
         }
@@ -139,7 +139,7 @@ export const LandingSection = () => {
           flex-flow: row wrap;
         }
 
-      }
+      } */
 
     `}</style>
   </section>
