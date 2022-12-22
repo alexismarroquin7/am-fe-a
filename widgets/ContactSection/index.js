@@ -1,11 +1,6 @@
 // data
 import { contact } from "../../data";
 
-// components
-import Image from 'next/image';
-
-// const ContactIcon = (type)
-
 export const ContactSection = () => {
 
   return (
@@ -49,7 +44,7 @@ export const ContactSection = () => {
 
       .contact-section-title {
         width: 100%;
-        text-align: center;
+        text-align: flex-start;
       }
       
       .contact-list {
