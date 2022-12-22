@@ -51,8 +51,6 @@ export const LandingSection = () => {
           steps={home.steps}
         />
       </div>
-    
-      <p>{home.description}</p>
       
       <div
         className="landing-section-button-container"

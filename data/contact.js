@@ -32,7 +32,7 @@ const contactLines = [
 ]; 
 
 export const contact = {
-  title: "Hit me up",
+  title: "Contact",
   lines: createIds('line_id', contactLines, true),
   id: "contact"
 }
