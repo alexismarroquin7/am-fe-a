@@ -30,7 +30,7 @@ export const home = {
     'web designer.',
     1500,
     'problem solver.',
-    1500,
+    1500
   ],
   buttons: createIds('button_id', buttons, true)
 }

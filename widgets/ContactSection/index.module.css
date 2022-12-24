@@ -1,0 +1,30 @@
+.contact_section {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+  background-color: transparent;
+}
+
+.contact_section_title {
+  width: 90%;
+  text-align: flex-start;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--terciary);
+}
+
+.contact_list {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact_icon {
+  font-size: 4rem;
+  color: var(--primary);
+}

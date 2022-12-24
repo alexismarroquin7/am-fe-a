@@ -1,0 +1,135 @@
+.skills_section {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: transparent;
+  color: var(--primary);
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.skills_title {
+  width: 90%;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--terciary);
+}
+
+.skills_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.skill_card {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 0;
+  border-radius: 1rem;
+}
+
+.skill_card p {
+  color: var(--black);
+}
+
+.skill_card_wrapper {
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.skill_card_icon {
+  font-size: 4rem;
+  color: var(--secondary);
+}
+      
+.skill_card_text_wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+}
+
+.skill_card_title {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--terciary);
+}
+
+.more_skills {
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.more_skill_item {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.more_skill_item.first {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.more_skill_item.last {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.more_skill_button {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+  background-color: transparent;
+  border: 0;
+}
+
+.more_skill_button_text {
+  width: 75%;
+  text-align: left;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--terciary);
+}
+
+.more_skill_button_icon {
+  font-size: 2rem;
+  color: var(--primary);
+  display: flex;
+  transform-origin: center;
+  transition: all .2s;
+}
+
+.more_skill_button_icon.active {
+  transform: rotate(-180deg);
+}
+
+
+.selected_more_skills_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  color: var(--black);
+} 

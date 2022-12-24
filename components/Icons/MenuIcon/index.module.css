@@ -1,0 +1,78 @@
+.button {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 0;
+}
+
+.top,
+.middle,
+.bottom {
+  stroke-width: 10;
+  stroke: var(--secondary);
+  transition: all .2s;
+}
+
+.top {
+  d: path("M0 5 L100 5");
+}
+
+.middle {
+  d: path("M0 50 L100 50");
+  opacity: 1;
+}
+
+.bottom {
+  d: path("M0 95 L100 95");
+}
+
+.open {
+  stroke: red;
+}
+
+.top.open {
+  animation: convert-top .3s ease-in-out;
+  animation-iteration-count: 1;
+  d: path("M0 0 L100 100");
+}
+
+.middle.open {
+  opacity: 0;
+}
+
+.bottom.open {
+  animation: convert-bottom .3s ease-in-out;
+  animation-iteration-count: 1;
+  d: path("M0 100 L100 0");
+}
+
+@keyframes convert-top {
+  
+  0% {
+    d: path("M0 5 L100 5");
+  }
+
+  50% {
+    d: path("M0 45 L100 45");
+  }
+  
+  100% {
+    d: path("M0 0 L100 100");
+  }
+}
+
+@keyframes convert-bottom {
+  
+  0% {
+    d: path("M0 95 L100 95");
+  }
+
+  50% {
+    d: path("M0 45 L100 45");
+  }
+  
+  100% {
+    d: path("M0 100 L100 0");
+  }
+}

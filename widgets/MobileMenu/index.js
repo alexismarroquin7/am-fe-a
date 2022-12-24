@@ -1,22 +1,26 @@
+
 // data
 import { routes } from "../../data";
+
+// styles
+import styles from "./index.module.css";
 
 export const MobileMenu = ({open = false, onClose}) => {
 
   return (
   <div
-    className={`mobile-menu ${open ? 'open' : ''}`}
+    className={`${styles.mobile_menu} ${open ? styles.open : ''}`}
     onClick={(e) => {
       e.preventDefault();
       if(typeof onClose === 'function') onClose();
     }}
   >
     <section 
-      className="mobile-menu-content" 
+      className={styles.mobile_menu_content}
     >
       {routes.map(route => (
         <button
-          className="link-button"
+          className={styles.link_button}
           key={route.route_id}
           onClick={(e) => {
             e.stopPropagation();
@@ -45,46 +49,6 @@ export const MobileMenu = ({open = false, onClose}) => {
         
       ))}
     </section>
-    
-    <style jsx>{`
-      .mobile-menu {
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        background-color: rgba(255, 255, 255, .75);  
-        backdrop-filter: blur(5px);
-        z-index: 999;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        display: none;
-        transition: all .2s;
-      }
-      
-      .mobile-menu-content {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-      }
-
-      .link-button {
-        border: 0;
-        padding: 2rem;
-        width: 50%;
-        background-color: transparent;
-        color: var(--blue);
-        font-weight: bold;
-      }
-      
-      .open {
-        display: flex;
-        left: 0%;
-      }
-
-    `}</style>
 
   </div>
   );

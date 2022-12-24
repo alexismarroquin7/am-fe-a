@@ -1,40 +1,50 @@
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
 :root {
-  --white: #fff;
-  --black: #06283D;
-  --blue: #1263DF;
-  --light-blue: #47B5FF;
-  --sky-blue: #DFF6FF;
+  --white: #fffafa;
+  --black: #303234;
+  
+  --primary: #2f404d;
+  --secondary: #3d898d;
+  --terciary: #85ebd9;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Cyber', sans-serif;
   font-size: 62.5%;
 }
 
 body {
-  background-color: #eee;
+  background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-color: var(--white);
+  color: var(--primary);
 }
 
 h1 {
-  font-size: 7.2rem;
-}
-h2 {
-  font-size: 6rem;
-}
-h3 {
-  font-size: 4.8rem;
-}
-h4 {
-  font-size: 3.6rem;
-}
-h5 {
   font-size: 3rem;
 }
-h6 {
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2.6rem;
+}
+h4 {
   font-size: 2.4rem;
+}
+h5 {
+  font-size: 2.2rem;
+}
+h6 {
+  font-size: 2rem;
 }
 
 select,
@@ -42,7 +52,20 @@ input,
 button,
 option,
 p,
-a,
+a {
+  font-size: 1.8rem;
+}
+
 span {
-  font-size: 2rem;
+  font-size: inherit;
+}
+
+.glass_background {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: .5rem;
 }

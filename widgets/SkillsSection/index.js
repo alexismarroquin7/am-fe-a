@@ -1,9 +1,12 @@
-// data
+
 import { skills } from "../../data";
-// components
-import Image from "next/image";
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import { useState } from "react";
+
+import styles from "./index.module.css";
+
 const initialTab = () => {
   let tabObj = {}
   Object.keys(skills.more).forEach(key => tabObj[key] = false);
@@ -17,35 +20,38 @@ export const SkillsSection = () => {
   return (
   <section
     id={skills.id}
-    className="skills-section"
+    className={styles.skills_section}
   >
         
-    <h6
-      className="skills-title"
-    >{skills.title}</h6>
+    <h3
+      className={styles.skills_title}
+    >{skills.title}</h3>
 
     <div
-      className="skill-list"
+      className={styles.skills_list}
     >
       {skills.list.map((skill, i) => (
         <div
           key={skill.id}      
-          className="skill-hero-card"
+          className={styles.skill_card}
           id={i}
         >
           <div
-            className="skill-hero-card-glass"
+            className={`glass_background ${styles.skill_card_wrapper}`}
           >
             <div
-              className="skill-hero-card-icon-container"
+              className={styles.skill_card_icon}
             >
               {skill.icon()}
             </div>
 
             <div
-              className="skill-hero-card-text-wrapper"
+              className={styles.skill_card_text_wrapper}
             >
-              <h6>{skill.name}</h6>
+              <h4
+                className={styles.skill_card_title}
+              
+              >{skill.name}</h4>
               <p>{skill.description}</p>
             </div>
 
@@ -55,16 +61,16 @@ export const SkillsSection = () => {
     </div>
 
     <div
-      className="more-skills"
+      className={`glass_background ${styles.more_skills}`}
     >
       {Object.keys(skills.more).map((key, i, arr) => {
         return (
           <div
             key={key}
-            className={`more-skill-item ${i === 0 && 'first'} ${i === arr.length - 1 && 'last'}`}
+            className={` ${styles.more_skill_item} ${i === 0 && styles.first} ${i === arr.length - 1 && styles.last}`}
           >
             <button
-              className="more-skill-button"
+              className={styles.more_skill_button}
               onPointerDown={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -75,21 +81,21 @@ export const SkillsSection = () => {
               }}
             
             >
+              {skills.more[key].icon()}
               <p
-              className="more-skill-button-text"
+                className={styles.more_skill_button_text}
               >
-
                 {key} 
               </p>
-            <div className={`more-skill-button-icon ${tab[key] && 'active'}`}>
+            <div className={`${styles.more_skill_button_icon} ${tab[key] && styles.active}`}>
               <KeyboardArrowDownIcon fontSize="inherit"/>
             </div>
             </button>
             {tab[key] && <div
-              className="selected-more-skills-list"
+              className={styles.selected_more_skills_list}
 
             >
-              {skills.more[key].map(skill => {
+              {skills.more[key].list.map(skill => {
                 return (
                   <p key={skill.id}>- {skill.name}
                   </p>
@@ -101,164 +107,6 @@ export const SkillsSection = () => {
       })}
     </div>
 
-    <style jsx>{`
-      .skills-section {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        background-color: var(--sky-blue);
-        color: var(--blue);
-        gap: 1rem;
-        padding: 4rem 0;
-      }
-
-      .skills-title {
-        width: 90%;
-      }
-
-      .skill-list {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-      }
-      
-      .skill-hero-card {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        gap: 4rem;
-        padding: 2rem 0;
-        border-radius: 1rem;
-      }
-
-      .skill-hero-card p {
-        color: var(--black);
-      }
-      
-      .skill-hero-card-glass {
-        width: 90%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        gap: 4rem;
-        padding: 4rem 2rem;
-        background-color: rgba(255, 255, 255, .75);  
-        backdrop-filter: blur(5px);
-        border-radius: 1rem;
-      }
-
-      .skill-hero-card-icon-container {
-        font-size: 4rem;
-      }
-            
-      .skill-item-text-wrapper {
-        display: flex;
-        flex-flow: column wrap;
-        gap: 2rem;
-      }
-
-      .more-skills {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-      }
-      
-      .more-skill-item {
-        background-color: rgba(255, 255, 255, .75);  
-        backdrop-filter: blur(5px);
-        width: 90%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-      }
-
-      .more-skill-item.first {
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-      }
-
-      .more-skill-item.last {
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-      }
-
-      .more-skill-button {
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 2rem;
-        color: var(--blue);
-        font-weight: bold;
-        background-color: transparent;
-        border: 0;
-      }
-
-      .more-skill-button-text {
-        width: 75%;
-        text-align: left;
-      }
-
-      .more-skill-button-icon {
-        font-size: 2rem;
-        color: var(--blue);
-        display: flex;
-        transform-origin: center;
-        transition: all .2s;
-      }
-
-      .more-skill-button-icon.active {
-        transform: rotate(-180deg);
-      }
-
-
-      .selected-more-skills-list {
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: flex-start;
-        gap: 1rem;
-        padding-bottom: 2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-
-        color: var(--black);
-      } 
-
-      /* @media (min-width: 600px) {
-        
-        .skills-title {
-          width: 70%;
-        }
-
-        .skill-item-glass {
-          width: 70%;
-          flex-flow: row wrap;
-          justify-content: space-between;
-          gap: 0;
-        }
-
-        .skill-item:nth-child(even) .skill-item-glass {
-          flex-flow: row-reverse wrap;
-        }
-
-        .skill-item-text-wrapper {
-          width: 50%;
-        }
-
-        .skill-item-image-container {
-          width: 50%;
-          display: flex;
-          justify-content: center;
-        }
-      } */
-
-    `}</style> 
   </section>
   )
 }
