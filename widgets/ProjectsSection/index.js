@@ -1,6 +1,7 @@
 import { project } from "../../data";
 import Link from "next/link";
 import styles from "./index.module.css";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export const ProjectsSection = () => {
   return <div id={project.id}
@@ -27,7 +28,8 @@ export const ProjectsSection = () => {
               target="_blank"
               passHref
             >
-              <a className={styles.project_card_name}>{p.name}</a>
+              <a className={styles.project_card_name}>{p.name} <OpenInNewIcon fontSize="inherit"/></a>
+              
             </Link>
             
             <p>{p.description}</p>

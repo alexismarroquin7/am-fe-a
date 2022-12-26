@@ -10,6 +10,7 @@ export const MenuIcon = ({onClick, width = "2rem", open = false}) => {
       }}
     >
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={width}
         viewBox={"0 0 100 100"}

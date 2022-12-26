@@ -49,7 +49,7 @@ export const MobileMenu = ({open = false, onClose}) => {
         
       ))}
     </section>
-
+    
   </div>
   );
 }

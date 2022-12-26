@@ -14,37 +14,41 @@ export const AboutSection = () => {
     className={styles.about_section}
     id={about.id}
   >
-    <h4
-      className={styles.about_title}
-    >{about.title}</h4>
-
     <div
-      className={`glass_background ${styles.about_section_card}`}
+      className={styles.about_section_wrapper}
     >
-          
-      <div
-        className={styles.image_wrapper}
-      >
-        <div
-          className={styles.image_container}
-        >
-          <Image 
-            src={about.image.src} 
-            alt={about.image.alt}
-            width={about.image.width}
-            height={about.image.width}
-          />
-        </div>
-      </div>
+      <h3
+        className={styles.about_title}
+      >{about.title}</h3>
 
       <div
-        className={styles.about_description}
+        className={`glass_background ${styles.about_section_card}`}
       >
-        {about.description.map((paragraph, i, arr) => (
-          <p
-            key={paragraph.id}
-          >{paragraph.text}</p>
-        ))}
+            
+        <div
+          className={styles.image_wrapper}
+        >
+          <div
+            className={styles.image_container}
+          >
+            <Image 
+              src={about.image.src} 
+              alt={about.image.alt}
+              width={about.image.width}
+              height={about.image.width}
+            />
+          </div>
+        </div>
+
+        <div
+          className={styles.about_description}
+        >
+          {about.description.map((p) => (
+            <p
+              key={p.id}
+            >{p.text}</p>
+          ))}
+        </div>
       </div>
     </div>
 

@@ -17,8 +17,6 @@
 
 .projects_title {
   color: var(--secondary);
-  text-decoration: underline;
-  text-decoration-color: var(--terciary);
 }
 
 .project_card {
@@ -37,6 +35,10 @@
   font-weight: bold;
   color: var(--secondary);
   text-decoration-color: var(--terciary);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
 .project_card_svg_wrapper {
@@ -45,4 +47,11 @@
   flex-flow: column wrap;
   gap: 1rem;
   align-items: center;
+}
+
+@media (min-width: 1025px) {
+  .projects_section_wrapper {
+    width: 40%
+  }
+
 }

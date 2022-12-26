@@ -1,10 +1,18 @@
 .about_section {
-  width: 100%;
+  background-color: transparent;
   display: flex;
   flex-flow: column wrap;
+  width: 100%;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.about_section_wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
   align-items: center;
   gap: 2rem;
-  padding: 4rem 0;
 }
 
 .about_section_card {
@@ -18,9 +26,6 @@
 .about_title {
   width: 90%;
   color: var(--secondary);
-  text-decoration: underline;
-  text-decoration-color: var(--terciary);
-
 }
 
 .image_wrapper {
@@ -28,11 +33,17 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .image_container {
   border-radius: 100%;
+  border: .2rem solid var(--primary);
   overflow: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .about_description {
@@ -40,4 +51,15 @@
   flex-flow: column wrap;
   gap: 2rem;
   color: var(--black);
+}
+
+@media (min-width: 1025px) {
+
+  .about_title { 
+    width: 40%;
+  }
+  
+  .about_section_card {
+    width: 40%;
+  }
 }

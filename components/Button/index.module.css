@@ -1,6 +1,5 @@
 .button {
-  position: relative;
-  display: inline-block;
+  
   color: var(--white);
   background-color: var(--primary);
   
@@ -25,6 +24,8 @@
   );
 
   transition: all .2s ease-in-out;
+
+  width: auto;
 }
 
 .contained {
@@ -42,13 +43,13 @@
 }
 
 .button:hover {
-  animation: glitchy 1s ease infinite;
+  animation: glow 1s ease infinite;
   color: var(--primary);
   background-color: transparent;
-  border-width: .4rem;
+  border-width: .2rem;
 }
 
-@keyframes glitchy {
+@keyframes glow {
   0%   {
     border-left-color: var(--secondary);
     border-top-color: var(--secondary);

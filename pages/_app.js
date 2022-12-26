@@ -10,7 +10,7 @@ const initialMenuOpen = false;
 
 function MyApp({ Component, pageProps }) {  
   
-  const [menuOpen, setMenuOpen] = useState(initialMenuOpen);
+  const [ menuOpen, setMenuOpen ] = useState(initialMenuOpen);
 
   return (
   <div className="app">

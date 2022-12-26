@@ -1,0 +1,87 @@
+.more_skills {
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.more_skill_item {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.more_skill_item.first {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.more_skill_item.last {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.more_skill_button {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+  background-color: transparent;
+  border: 0;
+}
+
+.more_skill_button_text_container {
+  font-size: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  width: 80%;
+}
+
+.more_skill_button_text {
+  width: 75%;
+  text-align: left;
+  color: var(--secondary);
+}
+
+.more_skill_button_icon {
+  font-size: 2rem;
+  color: var(--primary);
+  display: flex;
+  transform-origin: center;
+  transition: all .2s;
+}
+
+.more_skill_button_icon.active {
+  transform: rotate(-180deg);
+}
+
+
+.more_skills_tab_description {
+  width: 100%;
+  display: none;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  color: var(--black);
+  transition: all .2s;
+} 
+
+.more_skills_tab_description.more_skills_tab_selected {
+  display: flex;
+}
+
+@media (min-width: 1025px) {
+  .more_skills {
+    width: 40%;
+  }
+}

@@ -14,21 +14,6 @@ export const LandingSection = () => {
       behavior: "smooth"
     });
   };
-  
-  const handlePointerHover = e => {
-    const containerVariant = Array.from(e.target.classList).includes('contained');
-    const outlinedVariant = Array.from(e.target.classList).includes('outlined');
-    
-    if(containerVariant){
-      e.target.classList.remove('contained');
-      e.target.classList.add('outlined');
-
-    } else if(outlinedVariant){
-      e.target.classList.remove('outlined');
-      e.target.classList.add('contained');
-    }
-
-  };
 
   return (
   <section
@@ -67,9 +52,6 @@ export const LandingSection = () => {
               handlePointerDown(button);
             }}
             variant={button.variant}
-            fullWidth
-            onPointerEnter={handlePointerHover}
-            onPointerLeave={handlePointerHover}
           >{button.text}</Button>
         ))}
       </div>
