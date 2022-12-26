@@ -1,30 +1,21 @@
-export const AlexisMarroquinLogo = () => {
+export const AlexisMarroquinLogo = ({onClick}) => {
   return (
-  <span
+  <button
     className="wrapper"
+    onClick={onClick}
   >
-    {'<'}
-    <span
-      className="name"
-    >{'AM'}</span>
-    <span
-      className="slash"
-    >{'/'}</span>
-    {'>'}
-
+    
+    AM
     <style jsx>{`
       .wrapper {
-        color: var(--blue);
-      }
+        border: 0;
+        background-color: transparent;
+        font-size: 2rem;
+        
 
-      .name {
-        color: var(--black);
-      }
-      
-      .slash {
-        color: var(--sky-blue);
+        color: var(--secondary);
       }
     `}</style>
-  </span>
+  </button>
   )
 }

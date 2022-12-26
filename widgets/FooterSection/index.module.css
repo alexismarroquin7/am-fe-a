@@ -1,0 +1,27 @@
+.footer_section {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: transparent;
+}
+
+
+.path {
+  fill: var(--primary);
+}
+
+.footer_card {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 0;
+  background-color: var(--primary);
+  color: var(--secondary)
+}
+
+.middle_text {
+  color: var(--white);
+}

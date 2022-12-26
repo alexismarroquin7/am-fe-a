@@ -1,0 +1,97 @@
+.button {
+  
+  color: var(--white);
+  background-color: var(--primary);
+  
+
+  padding: 1rem 2rem;
+
+  border-width: .2rem;
+  border-style: solid;
+  
+  border-left-color: var(--secondary);
+  border-top-color: var(--secondary);
+  border-right-color: var(--terciary);
+  border-bottom-color: var(--terciary);
+  
+  clip-path: polygon(
+    0 0,
+    calc(100% - 1rem) 0,
+    100% 1rem,
+    100% 100%,
+    1rem 100%,
+    0 calc(100% - 1rem)
+  );
+
+  transition: all .2s ease-in-out;
+
+  width: auto;
+}
+
+.contained {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.outlined {
+  color: var(--primary);
+  background-color: transparent;
+}
+
+.full_width {
+  width: 100%;
+}
+
+.button:hover {
+  animation: glow 1s ease infinite;
+  color: var(--primary);
+  background-color: transparent;
+  border-width: .2rem;
+}
+
+@keyframes glow {
+  0%   {
+    border-left-color: var(--secondary);
+    border-top-color: var(--secondary);
+    border-right-color: var(--terciary);
+    border-bottom-color: var(--terciary);
+    
+  }
+  25%  {
+    border-left-color: var(--terciary);
+    border-top-color: var(--secondary);
+    border-right-color: var(--secondary);
+    border-bottom-color: var(--terciary);
+    
+  }
+  50%  {
+    border-left-color: var(--terciary);
+    border-top-color: var(--terciary);
+    border-right-color: var(--secondary);
+    border-bottom-color: var(--secondary);
+    
+  }
+  75%  {
+    border-left-color: var(--secondary);
+    border-top-color: var(--terciary);
+    border-right-color: var(--terciary);
+    border-bottom-color: var(--secondary);
+    
+  }
+  100%  {
+    border-left-color: var(--secondary);
+    border-top-color: var(--secondary);
+    border-right-color: var(--terciary);
+    border-bottom-color: var(--terciary);
+    
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .outlined {
+    color: var(--white);
+  }
+  .button:hover {
+    color: var(--white);
+  }
+}

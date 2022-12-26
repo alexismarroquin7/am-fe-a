@@ -1,0 +1,50 @@
+.skill_card {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 0;
+  border-radius: 1rem;
+}
+
+.skill_card_wrapper {
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.skill_card_description {
+  color: var(--black);
+}
+
+.skill_card_icon {
+  font-size: 4rem;
+  color: var(--secondary);
+}
+      
+.skill_card_text_wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+}
+
+.skill_card_title {
+  color: var(--secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill_card_description {
+    color: var(--white);
+  }  
+}
+
+@media (min-width: 1025px) {
+  .skill_card_wrapper {
+    width: 100%;
+  }
+}

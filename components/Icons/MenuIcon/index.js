@@ -1,55 +1,31 @@
-export const MenuIcon = ({onClick, open}) => {
+import styles from "./index.module.css";
+
+export const MenuIcon = ({onClick, width = "2rem", open = false}) => {
   return (
     <button
+      className={styles.button}
       onClick={(e) => {
         if (typeof onClick !== "function") return;
         onClick(e);
       }}
     >
-      <span className={`top ${open ? 'open' : ''}`} />
-      <span className={`middle ${open ? 'open' : ''}`} />
-      <span className={`bottom ${open ? 'open' : ''}`} />
-      
-      <style jsx>{`
-        button {
-          display: flex;
-          flex-flow: column wrap;
-          border: 0;
-          justify-content: space-between;
-          background-color: transparent;
-          gap: .2rem;
-        }
-        
-        .top,
-        .middle,
-        .bottom {
-          background-color: black;
-          padding: .1rem 1.5rem;
-          transition: all .2s;
-        }
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={width}
+        viewBox={"0 0 100 100"}
+      >
+        <path 
+          className={`${styles.top} ${open ? styles.open : ""}`}
+        />
+        <path 
+          className={`${styles.middle} ${open ? styles.open : ""}`}
+        />
+        <path 
+          className={`${styles.bottom} ${open ? styles.open : ""}`}
+        />
+      </svg>
 
-        .top,
-        .bottom {
-          transform-origin: left;
-        }
-        
-        .top.open {
-          transform: rotate(45deg);
-        }
-
-        .middle.open {
-          opacity: 0;
-        }
-
-        .bottom.open {
-          transform: rotate(-45deg);
-        }
-
-        .open {
-          background-color: red;
-        }
-
-      `}</style>
     </button>
   );
 };

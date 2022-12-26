@@ -1,9 +1,13 @@
 import { createIds } from "../utils";
-import { responsiveWebDesign, wireframingAndPrototyping, restApi } from "./images";
 
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import DevicesIcon from '@mui/icons-material/Devices';
 import CloudSyncIcon from '@mui/icons-material/CloudSync';
+
+import CodeIcon from '@mui/icons-material/Code';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import CasinoIcon from '@mui/icons-material/Casino';
 
 const skillsList = [
   {
@@ -124,12 +128,30 @@ export const skills = {
   title: `My Skills`,
   list: createIds('id', skillsList, true),
   more: {
-    'Programming Languages': createIds('id', programmingLanguages, true),
-    'Front-end Libraries': createIds('id', frontEndLibraries, true),
-    'Back-end Libraries': createIds('id', backEndLibraries, true),
-    'Front-end Frameworks': createIds('id', frontEndFrameworks, true),
-    'Back-end Frameworks': createIds('id', backEndFrameworks, true),
-    'Other': createIds('id', other, true),
+    'Programming Languages': {
+      list: createIds('id', programmingLanguages, true),
+      icon: () => <CodeIcon fontSize="inherit"/>
+    },
+    'Front-end Libraries': {
+      list: createIds('id', frontEndLibraries, true),
+      icon: () => <AutoStoriesIcon fontSize="inherit"/>
+    },
+    'Back-end Libraries': {
+      list: createIds('id', backEndLibraries, true),
+      icon: () => <AutoStoriesIcon fontSize="inherit"/>
+    },
+    'Front-end Frameworks': {
+      list: createIds('id', frontEndFrameworks, true),
+      icon: () => <MiscellaneousServicesIcon fontSize="inherit"/>
+    },
+    'Back-end Frameworks': {
+      list: createIds('id', backEndFrameworks, true),
+      icon: () => <MiscellaneousServicesIcon fontSize="inherit"/>
+    },
+    'Other': {
+      list: createIds('id', other, true),
+      icon: () => <CasinoIcon fontSize="inherit"/>
+    },
   },
   id: "skills"
 }

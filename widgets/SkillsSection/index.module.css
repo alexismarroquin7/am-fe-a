@@ -1,0 +1,38 @@
+.skills_section {
+  background-color: transparent;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.skills_section_wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skills_title {
+  width: 90%;
+  color: var(--secondary);
+}
+
+.skills_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+
+@media (min-width: 1025px) {
+  .skills_title {
+    width: 40%;
+  }  
+  .skills_list {
+    width: 40%;
+  }  
+}
