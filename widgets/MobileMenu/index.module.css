@@ -41,6 +41,12 @@
   right: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+  .mobile_menu {
+    background-color: var(--black);
+  }
+}
+
 @media (min-width: 1025px) {
 
   .mobile_menu_content {
@@ -49,7 +55,7 @@
   }
 
   .open {
-    right: 50%;
+    right: 75%;
     
   }
 

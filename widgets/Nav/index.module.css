@@ -2,11 +2,11 @@
   width: 100%;
   
   padding: 2rem 0;
-  border-bottom: 1px solid #eee;
-  box-shadow: 1px 1px 1px #eee;
+  border-bottom: 1px solid var(--white);
+  box-shadow: 1px 1px 1px var(--white);
   position: sticky;
   top: -7rem;
-  background-color: white;
+  background-color: var(--white);
   z-index: 1000;
 
   margin-bottom: 4rem;
@@ -36,4 +36,15 @@
   gap: 1rem;
   color: var(--secondary);
   font-size: 2.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .nav {
+    color: var(--white);
+    background-color: var(--black);
+    border-color: var(--black);
+    box-shadow: 1px 1px 1px var(--black);
+
+  }
 }

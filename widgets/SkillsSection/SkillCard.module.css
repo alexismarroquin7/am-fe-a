@@ -27,6 +27,7 @@
 }
       
 .skill_card_text_wrapper {
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   gap: 2rem;
@@ -34,6 +35,12 @@
 
 .skill_card_title {
   color: var(--secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill_card_description {
+    color: var(--white);
+  }  
 }
 
 @media (min-width: 1025px) {

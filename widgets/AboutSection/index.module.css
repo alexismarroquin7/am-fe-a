@@ -53,6 +53,12 @@
   color: var(--black);
 }
 
+@media (prefers-color-scheme: dark) {
+  .about_description {
+    color: var(--white);
+  }
+}
+
 @media (min-width: 1025px) {
 
   .about_title { 
