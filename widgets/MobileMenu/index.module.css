@@ -28,7 +28,6 @@
   text-decoration: underline;
   text-decoration-color: var(--terciary);
   font-size: 3rem;
-
 }
 
 .link_button:hover {
@@ -43,7 +42,15 @@
 }
 
 @media (min-width: 1025px) {
+
+  .mobile_menu_content {
+    align-items: flex-start;
+    padding: 5%;
+  }
+
   .open {
     right: 50%;
+    
   }
+
 }

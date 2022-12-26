@@ -7,6 +7,7 @@ import styles from "./index.module.css";
 
 export const MobileMenu = ({open = false, onClose}) => {
 
+
   return (
   <div
     className={`${styles.mobile_menu} ${open ? styles.open : ''}`}
