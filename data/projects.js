@@ -4,7 +4,7 @@ const projectList = [
   {
     name: 'PasswordPronto.com',
     description: 'This app is a password generator that aims to make it easier to the create strong passwords.',
-    url: 'https://passwordpronto.com',
+    url: 'https://password-pronto.vercel.app',
     svg: {
       html: () => <svg width="4rem" height="4rem" viewBox="0 0 232 311" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="131.013" width="232" height="179" rx="18" fill="black"/>
